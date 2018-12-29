@@ -4,7 +4,8 @@
 int main() {
     std::cout << "Hello, World!" << std::endl;
 
-    // Make class
+    // Make class with uniform initialization
     Simulation sim_test {};
+
     return 0;
 }

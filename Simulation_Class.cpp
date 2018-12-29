@@ -3,11 +3,7 @@
 //
 
 #include <iostream>
-#include <string>
 #include <vector>
-#include "Simulation_Class.h"
-
-
 
 
 class Simulation
@@ -40,11 +36,10 @@ private:
     std::vector<std::vector<double> > velocities {m_n_particle, std::vector<double>(m_n_dimensions)};
     // Dynamic Variables
 
-    //Default Constructor
-public: Simulation()
-    {
-        //toPrint(velocities);
-    }
+    // Trivial Default Constructor
+public:
+    Simulation() = default;
+
 
     // Print values to test
     void toPrint( std::vector<std::vector<double> > &vector)
