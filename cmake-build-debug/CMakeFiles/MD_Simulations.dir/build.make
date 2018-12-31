@@ -70,32 +70,62 @@ CMakeFiles/MD_Simulations.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MD_Simulations.dir/main.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alecglisman/CLionProjects/MD-Simulations/main.cpp -o CMakeFiles/MD_Simulations.dir/main.cpp.s
 
-CMakeFiles/MD_Simulations.dir/Simulation_Class.cpp.o: CMakeFiles/MD_Simulations.dir/flags.make
-CMakeFiles/MD_Simulations.dir/Simulation_Class.cpp.o: ../Simulation_Class.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MD_Simulations.dir/Simulation_Class.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MD_Simulations.dir/Simulation_Class.cpp.o -c /Users/alecglisman/CLionProjects/MD-Simulations/Simulation_Class.cpp
+CMakeFiles/MD_Simulations.dir/Simulation.cpp.o: CMakeFiles/MD_Simulations.dir/flags.make
+CMakeFiles/MD_Simulations.dir/Simulation.cpp.o: ../Simulation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MD_Simulations.dir/Simulation.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MD_Simulations.dir/Simulation.cpp.o -c /Users/alecglisman/CLionProjects/MD-Simulations/Simulation.cpp
 
-CMakeFiles/MD_Simulations.dir/Simulation_Class.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MD_Simulations.dir/Simulation_Class.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alecglisman/CLionProjects/MD-Simulations/Simulation_Class.cpp > CMakeFiles/MD_Simulations.dir/Simulation_Class.cpp.i
+CMakeFiles/MD_Simulations.dir/Simulation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MD_Simulations.dir/Simulation.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alecglisman/CLionProjects/MD-Simulations/Simulation.cpp > CMakeFiles/MD_Simulations.dir/Simulation.cpp.i
 
-CMakeFiles/MD_Simulations.dir/Simulation_Class.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MD_Simulations.dir/Simulation_Class.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alecglisman/CLionProjects/MD-Simulations/Simulation_Class.cpp -o CMakeFiles/MD_Simulations.dir/Simulation_Class.cpp.s
+CMakeFiles/MD_Simulations.dir/Simulation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MD_Simulations.dir/Simulation.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alecglisman/CLionProjects/MD-Simulations/Simulation.cpp -o CMakeFiles/MD_Simulations.dir/Simulation.cpp.s
+
+CMakeFiles/MD_Simulations.dir/Utilities.cpp.o: CMakeFiles/MD_Simulations.dir/flags.make
+CMakeFiles/MD_Simulations.dir/Utilities.cpp.o: ../Utilities.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/MD_Simulations.dir/Utilities.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MD_Simulations.dir/Utilities.cpp.o -c /Users/alecglisman/CLionProjects/MD-Simulations/Utilities.cpp
+
+CMakeFiles/MD_Simulations.dir/Utilities.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MD_Simulations.dir/Utilities.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alecglisman/CLionProjects/MD-Simulations/Utilities.cpp > CMakeFiles/MD_Simulations.dir/Utilities.cpp.i
+
+CMakeFiles/MD_Simulations.dir/Utilities.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MD_Simulations.dir/Utilities.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alecglisman/CLionProjects/MD-Simulations/Utilities.cpp -o CMakeFiles/MD_Simulations.dir/Utilities.cpp.s
+
+CMakeFiles/MD_Simulations.dir/Old_Tests.cpp.o: CMakeFiles/MD_Simulations.dir/flags.make
+CMakeFiles/MD_Simulations.dir/Old_Tests.cpp.o: ../Old_Tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/MD_Simulations.dir/Old_Tests.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MD_Simulations.dir/Old_Tests.cpp.o -c /Users/alecglisman/CLionProjects/MD-Simulations/Old_Tests.cpp
+
+CMakeFiles/MD_Simulations.dir/Old_Tests.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MD_Simulations.dir/Old_Tests.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alecglisman/CLionProjects/MD-Simulations/Old_Tests.cpp > CMakeFiles/MD_Simulations.dir/Old_Tests.cpp.i
+
+CMakeFiles/MD_Simulations.dir/Old_Tests.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MD_Simulations.dir/Old_Tests.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alecglisman/CLionProjects/MD-Simulations/Old_Tests.cpp -o CMakeFiles/MD_Simulations.dir/Old_Tests.cpp.s
 
 # Object files for target MD_Simulations
 MD_Simulations_OBJECTS = \
 "CMakeFiles/MD_Simulations.dir/main.cpp.o" \
-"CMakeFiles/MD_Simulations.dir/Simulation_Class.cpp.o"
+"CMakeFiles/MD_Simulations.dir/Simulation.cpp.o" \
+"CMakeFiles/MD_Simulations.dir/Utilities.cpp.o" \
+"CMakeFiles/MD_Simulations.dir/Old_Tests.cpp.o"
 
 # External object files for target MD_Simulations
 MD_Simulations_EXTERNAL_OBJECTS =
 
 MD_Simulations: CMakeFiles/MD_Simulations.dir/main.cpp.o
-MD_Simulations: CMakeFiles/MD_Simulations.dir/Simulation_Class.cpp.o
+MD_Simulations: CMakeFiles/MD_Simulations.dir/Simulation.cpp.o
+MD_Simulations: CMakeFiles/MD_Simulations.dir/Utilities.cpp.o
+MD_Simulations: CMakeFiles/MD_Simulations.dir/Old_Tests.cpp.o
 MD_Simulations: CMakeFiles/MD_Simulations.dir/build.make
 MD_Simulations: CMakeFiles/MD_Simulations.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable MD_Simulations"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable MD_Simulations"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MD_Simulations.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

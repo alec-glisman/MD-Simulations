@@ -80,10 +80,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/alecglisman/CLionProjects/MD-Simulations/Simulation_Class.cpp">
+		<Unit filename="/Users/alecglisman/CLionProjects/MD-Simulations/Old_Tests.cpp">
 			<Option target="MD_Simulations"/>
 		</Unit>
-		<Unit filename="/Users/alecglisman/CLionProjects/MD-Simulations/Simulation_Class.h">
+		<Unit filename="/Users/alecglisman/CLionProjects/MD-Simulations/Simulation.cpp">
+			<Option target="MD_Simulations"/>
+		</Unit>
+		<Unit filename="/Users/alecglisman/CLionProjects/MD-Simulations/Simulation.h">
+			<Option target="MD_Simulations"/>
+		</Unit>
+		<Unit filename="/Users/alecglisman/CLionProjects/MD-Simulations/Utilities.cpp">
+			<Option target="MD_Simulations"/>
+		</Unit>
+		<Unit filename="/Users/alecglisman/CLionProjects/MD-Simulations/Utilities.h">
 			<Option target="MD_Simulations"/>
 		</Unit>
 		<Unit filename="/Users/alecglisman/CLionProjects/MD-Simulations/main.cpp">

@@ -6,7 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/Users/alecglisman/CLionProjects/MD-Simulations/Simulation_Class.cpp
+/Users/alecglisman/CLionProjects/MD-Simulations/Simulation.h
+Utilities.h
+/Users/alecglisman/CLionProjects/MD-Simulations/Utilities.h
 cmath
 -
 iostream
@@ -18,9 +20,15 @@ boost/range/irange.hpp
 boost/range/algorithm_ext/push_back.hpp
 -
 
+/Users/alecglisman/CLionProjects/MD-Simulations/Utilities.h
+iostream
+-
+vector
+-
+
 /Users/alecglisman/CLionProjects/MD-Simulations/main.cpp
-Simulation_Class.cpp
-/Users/alecglisman/CLionProjects/MD-Simulations/Simulation_Class.cpp
+Simulation.h
+/Users/alecglisman/CLionProjects/MD-Simulations/Simulation.h
 
 /usr/local/include/boost/assert.hpp
 boost/config.hpp
