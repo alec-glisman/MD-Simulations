@@ -11,24 +11,14 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56d34db4-5ae9-4e50-be71-64deecae5c5b" name="Default Changelist" comment="Updated CMAKE to include boost library, as well as started FCC lattice&#10;initializer function.">
+    <list default="true" id="56d34db4-5ae9-4e50-be71-64deecae5c5b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/alecglisman.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/alecglisman.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Simulation_Class.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation_Class.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/DependInfo.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/Simulation_Class.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/Simulation_Class.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/flags.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/MD_Simulations" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/MD_Simulations" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/MD_Simulations.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/MD_Simulations.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,13 +39,22 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Simulation_Class.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Simulation_Class.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="136" column="30" lean-forward="true" selection-start-line="136" selection-start-column="30" selection-end-line="136" selection-end-column="30" />
+            <state relative-caret-position="309">
+              <caret line="142" column="26" lean-forward="true" selection-start-line="142" selection-start-column="26" selection-end-line="142" selection-end-column="26" />
               <folding>
-                <element signature="e#65#88#0" expanded="true" />
+                <element signature="e#65#94#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -64,8 +63,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+            <state relative-caret-position="323">
+              <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -84,8 +83,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Simulation_Class.h" />
-        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/Simulation_Class.cpp" />
       </list>
     </option>
@@ -101,7 +100,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -113,6 +111,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -152,7 +151,8 @@
       <updated>1546058823852</updated>
       <workItem from="1546058825455" duration="550000" />
       <workItem from="1546061044506" duration="3118000" />
-      <workItem from="1546127755514" duration="10269000" />
+      <workItem from="1546127755514" duration="10363000" />
+      <workItem from="1546277289102" duration="4095000" />
     </task>
     <task id="LOCAL-00001" summary="Small change to style of main.cpp file">
       <created>1546064401740</created>
@@ -168,28 +168,35 @@
       <option name="project" value="LOCAL" />
       <updated>1546129942411</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Updated CMAKE to include boost library, as well as started FCC lattice&#10;initializer function.">
+      <created>1546154482086</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1546154482086</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13937000" />
+    <option name="totallyTimeSpent" value="18126000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="832" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.16452074" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.16371681" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49785408" visible="true" weight="0.32837838" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49785408" visible="true" weight="0.30135134" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49852508" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.49852508" weight="0.32837838" />
+      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.49852508" weight="0.4581081" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32891566" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50214595" side_tool="true" weight="0.32837838" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32837838" />
@@ -228,13 +235,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Simulation_Class.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -242,19 +242,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Simulation_Class.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+        <state relative-caret-position="323">
+          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Simulation_Class.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="136" column="30" lean-forward="true" selection-start-line="136" selection-start-column="30" selection-end-line="136" selection-end-column="30" />
+        <state relative-caret-position="309">
+          <caret line="142" column="26" lean-forward="true" selection-start-line="142" selection-start-column="26" selection-end-line="142" selection-end-column="26" />
           <folding>
-            <element signature="e#65#88#0" expanded="true" />
+            <element signature="e#65#94#0" expanded="true" />
           </folding>
         </state>
       </provider>
