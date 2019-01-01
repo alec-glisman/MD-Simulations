@@ -11,6 +11,9 @@
 // External Dependencies
 #include <cmath> // pow, ceil
 #include <iostream>
+#include <fstream> // for file writing
+#include <sstream> // to convert int to string_t
+#include <cstdio> // delete files
 #include <vector>
 #include <boost/range/irange.hpp> // i range
 #include <boost/range/algorithm_ext/push_back.hpp> // push_back
@@ -31,6 +34,8 @@ private:
     // Log and other filesystem information
     string_t m_foldername = "Q3.1-Energy";
     string_t m_filename = "sim00";
+    string_t m_filename_xyz;
+    string_t m_filename_log;
 
     // Simulation parameters that must be input by the constructor or will take these default values
     int m_num_iter = 4000;
@@ -45,6 +50,7 @@ private:
 
     unsigned long m_n_dimensions = 3;
     long m_DoF = m_n_dimensions * (m_n_particle - 1);
+    long m_iterationNumber = 0;
 
     // Constant box properties
     double m_vol = m_box * m_box * m_box;
@@ -57,7 +63,15 @@ private:
     // Dynamic Variables
     doubleMatrix_t forces{m_n_particle, doubleVector_t(m_n_dimensions)};
 
-    // TODO: Energetic Variables
+    // Thermodynamic Variables
+    doubleVector_t W{};  // Related to pressure
+    doubleVector_t Temp_sim{};
+    doubleVector_t Pressure{};
+
+    // Energetic Variables
+    doubleVector_t E_potential{};
+    doubleVector_t E_kinetic{};
+    doubleVector_t E_total{};
 
 
 public:  // Default trivial constructor
@@ -82,6 +96,26 @@ private: // Helper function to calculate an integer range (vector) between start
 private: // Initializes the velocities to have 0 lin momentum and KE that agrees with Temp
     void velocity_init();
 
+private: // Saves and extended XYZ file format to be read into OVITO
+    void create_frame();
+
+private: // Writes simulation variables to log file (.txt)
+    void log_data();
+
+private: // Calculate forces, U, W
+    void forceAndEnergetics();
+
+private: // Calculate KE
+    void kineticEnergy();
+
+private: // Calculate PE
+    void potentialEnergy();
+
+private: // Calculate Total E
+    void totalEnergy();
+
+private: // Calculate T_sim
+    void simulationTemperature();
 };
 
 

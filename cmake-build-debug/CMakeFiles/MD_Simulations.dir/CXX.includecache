@@ -17,6 +17,12 @@ cmath
 -
 iostream
 -
+fstream
+-
+sstream
+-
+cstdio
+-
 vector
 -
 boost/range/irange.hpp

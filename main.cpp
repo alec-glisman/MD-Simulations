@@ -1,5 +1,6 @@
 #include "Simulation.h"
 
+
 int main() {
     // Make class with uniform initialization
     Simulation sim_test_default{};
@@ -22,7 +23,6 @@ int main() {
                                     box, epsilon,
                                     sigma, dt,
                                     filename, foldername};
-
 
     return 0;
 }

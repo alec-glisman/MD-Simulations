@@ -34,7 +34,16 @@ Simulation::Simulation(int num_iter, int num_simulations,
         m_filename(std::move(filename)),
         m_foldername(std::move(foldername)) {
 
-    // Set DoF
+    // Full filenames/paths
+    m_filename_xyz = "../" + m_foldername + "/" + m_filename + ".xyz";
+    m_filename_log = "../" + m_foldername + "/" + m_filename + ".txt";
+    // Create directory
+
+    // delete files (if they previously existed)
+    std::remove(m_filename_log.c_str());
+    std::remove(m_filename_xyz.c_str());
+
+
     m_DoF = m_n_dimensions * (m_n_particle - 1);
 
     // Initialize radii with FCC lattice positions
@@ -42,7 +51,10 @@ Simulation::Simulation(int num_iter, int num_simulations,
 
     // Initialize Velocities
     velocity_init();
-    Utilities::print(velocities, "Velocity at t=0:");
+    //Utilities::print(velocities, "Velocity at t=0:");
+
+    // Make initial FCC frame
+    create_frame();
 }
 
 
@@ -174,8 +186,38 @@ void Simulation::velocity_init() {
         velocities.at(p).at(1) = vel_init_j.at(p);
         velocities.at(p).at(2) = vel_init_k.at(p);
     }
+}
 
+void Simulation::create_frame() {
+    // Convert n_particles to a string object
+    std::stringstream ssPart; // now we can make a new ss
+    ssPart << m_n_particle;
+    string_t n_particleString = ssPart.str();
+    // Convert box (double) to a string object
+    std::stringstream ssBox; // now we can make a new ss
+    ssBox << m_box;
+    string_t boxString = ssBox.str();
+    // Convert time (double) to a string object
+    std::stringstream ssTime; // now we can make a new ss
+    ssTime << (m_dt * m_iterationNumber);
+    string_t timeString = ssTime.str();
 
+    // File to write to
+    std::ofstream file(m_filename_xyz.c_str());
+    if (file.is_open()) {
+        // Header Information
+        file << n_particleString + "\n"; // Number of particles
+        file << "Lattice=\"" + boxString + " 0.0 0.0 0.0 "
+                + boxString + " 0.0 0.0 0.0 "
+                + boxString + "\" ";
+        file << "Properties=\"species:S:1:pos:R:3:vel:R:3:diameter:R:1\" ";
+        file << "Time=" + timeString + "\n";
+        // TODO: Atom Information (1-Species, 3-Position, 3-Velocity, 1-Diameter)
+
+        file.close();
+    } else {
+        std::cout << "Unable to open XYZ File";
+    }
 }
 
 
