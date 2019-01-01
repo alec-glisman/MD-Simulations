@@ -35,7 +35,8 @@ Simulation::Simulation(int num_iter, int num_simulations,
         m_foldername(std::move(foldername)) {
     // Initialize radii with FCC lattice positions
     fcc_lattice_init();
-    Utilities::print(radii, "FCC Radii:");
+    string_t text = "FCC Radii:";
+    Utilities::print(radii, text);
 }
 
 

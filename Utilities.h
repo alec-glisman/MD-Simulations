@@ -18,6 +18,12 @@ using string_t = std::string;
 
 class Utilities {
 
+/*
+public:
+    template <typename Type>
+    static const void print(const Type &vector, const string_t &string);
+*/
+
 public:
     static void print(doubleMatrix_t &vector, const string_t &string);
 
