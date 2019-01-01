@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <vector>
+#include <iomanip> // Set precision of printing
 
 // TYPE ALIASES
 using doubleMatrix_t =  std::vector<std::vector<double> >;

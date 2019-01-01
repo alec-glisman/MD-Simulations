@@ -47,6 +47,7 @@ void Utilities::print(doubleMatrix_t &vector, const string_t &string)
 /// Method to print out a 2D Matrix
 /// \param vector a 2D vector with type double entries
 {
+    std::cout << std::setprecision(3) << std::fixed;
     std::cout << string + "\n";
     // Loop through all rows
     std::cout << "";
@@ -75,6 +76,7 @@ void Utilities::print(intMatrix_t &vector, const string_t &string)
 /// Method to print out a 2D Matrix
 /// \param vector a 2D vector with type double entries
 {
+    std::cout << std::setprecision(3) << std::fixed;
     std::cout << string + "\n";
     // Loop through all rows
     std::cout << "[[";
@@ -100,6 +102,7 @@ void Utilities::print(intMatrix_t &vector, const string_t &string)
 
 
 void Utilities::print(intVector_t &vector, const string_t &string) {
+    std::cout << std::setprecision(3) << std::fixed;
     std::cout << string + "\n";
     std::cout << "[";
     for (auto i = vector.begin(); i != vector.end(); ++i) {

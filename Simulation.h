@@ -10,10 +10,10 @@
 
 // External Dependencies
 #include <cmath> // pow, ceil
-#include <iostream>
+#include <iostream> // Printing to terminal
+#include <iomanip> // Set precision of printing
 #include <fstream> // for file writing
 #include <sstream> // to convert int to string_t
-#include <cstdio> // delete files
 #include <vector>
 #include <boost/range/irange.hpp> // i range
 #include <boost/range/algorithm_ext/push_back.hpp> // push_back
@@ -30,19 +30,24 @@ using string_t = std::string;
 
 class Simulation {
 
+public:
+    string_t m_filename_xyz;
+    string_t m_filename_log;
+
 private:
     // Log and other filesystem information
     string_t m_foldername = "Q3.1-Energy";
     string_t m_filename = "sim00";
-    string_t m_filename_xyz;
-    string_t m_filename_log;
+
+    string_t m_atom = "C";
+    double m_diameter = 0.5;
 
     // Simulation parameters that must be input by the constructor or will take these default values
     int m_num_iter = 4000;
     int m_num_simulations = 6;
     unsigned long m_n_particle = 50;
     double m_temp = 1.8;
-    double m_box = 20.0;
+    double m_box = 1.0;
     double m_epsilon = 1.0;
     double m_sigma = 1.0;
     double m_dt = 0.005;

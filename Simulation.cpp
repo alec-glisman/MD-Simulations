@@ -37,11 +37,6 @@ Simulation::Simulation(int num_iter, int num_simulations,
     // Full filenames/paths
     m_filename_xyz = "../" + m_foldername + "/" + m_filename + ".xyz";
     m_filename_log = "../" + m_foldername + "/" + m_filename + ".txt";
-    // Create directory
-
-    // delete files (if they previously existed)
-    std::remove(m_filename_log.c_str());
-    std::remove(m_filename_xyz.c_str());
 
 
     m_DoF = m_n_dimensions * (m_n_particle - 1);
@@ -55,6 +50,8 @@ Simulation::Simulation(int num_iter, int num_simulations,
 
     // Make initial FCC frame
     create_frame();
+    // Output Log Data
+    log_data();
 }
 
 
@@ -188,7 +185,9 @@ void Simulation::velocity_init() {
     }
 }
 
+
 void Simulation::create_frame() {
+    std::cout << std::setprecision(4) << std::fixed;
     // Convert n_particles to a string object
     std::stringstream ssPart; // now we can make a new ss
     ssPart << m_n_particle;
@@ -203,8 +202,9 @@ void Simulation::create_frame() {
     string_t timeString = ssTime.str();
 
     // File to write to
-    std::ofstream file(m_filename_xyz.c_str());
+    std::ofstream file(m_filename_xyz.c_str(), std::fstream::app);
     if (file.is_open()) {
+        string_t delimiter = "      ";
         // Header Information
         file << n_particleString + "\n"; // Number of particles
         file << "Lattice=\"" + boxString + " 0.0 0.0 0.0 "
@@ -212,8 +212,25 @@ void Simulation::create_frame() {
                 + boxString + "\" ";
         file << "Properties=\"species:S:1:pos:R:3:vel:R:3:diameter:R:1\" ";
         file << "Time=" + timeString + "\n";
-        // TODO: Atom Information (1-Species, 3-Position, 3-Velocity, 1-Diameter)
-
+        // Atom Information (1-Species, 3-Position, 3-Velocity, 1-Diameter)
+        for (int i = 0; i < m_n_particle; i++) {
+            file << m_atom + "\t\t";
+            file << radii[i][0];
+            file << delimiter;
+            file << radii[i][1];
+            file << delimiter;
+            file << radii[i][2];
+            file << delimiter;
+            file << std::fixed << std::setprecision(4) << velocities[i][0];
+            file << delimiter;
+            file << std::fixed << std::setprecision(4) << velocities[i][1];
+            file << delimiter;
+            file << std::fixed << std::setprecision(4) << velocities[i][2];
+            file << delimiter;
+            file << m_diameter;
+            file << "\n";
+        }
+        file << "\n\n";
         file.close();
     } else {
         std::cout << "Unable to open XYZ File";
@@ -221,4 +238,23 @@ void Simulation::create_frame() {
 }
 
 
-
+void Simulation::log_data() {
+    std::ofstream file(m_filename_log.c_str(), std::fstream::app);
+    if (file.is_open()) {
+        file << "\n\n";
+        file << "Simulation: " << m_filename << "\n";
+        file << "\n";
+        file << "Input Parameters:\n";
+        file << "dt " << std::setprecision(4) << m_dt << "\n";
+        file << "Total time " << std::setprecision(4) << m_t_total << "\n";
+        file << "Number of particles " << m_n_particle << "\n";
+        file << "Number of steps " << m_num_iter << "\n";
+        file << "Box size " << std::setprecision(4) << m_temp << "\n";
+        file << "Initial temperature " << std::setprecision(4) << m_temp << "\n";
+        file << "Epsilon " << std::setprecision(4) << m_temp << "\n";
+        file << "Sigma " << std::setprecision(4) << m_sigma << "\n";
+        file.close();
+    } else {
+        std::cout << "Unable to open log File";
+    }
+}

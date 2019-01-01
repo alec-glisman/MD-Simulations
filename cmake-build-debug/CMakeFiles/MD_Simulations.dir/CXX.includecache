@@ -17,11 +17,11 @@ cmath
 -
 iostream
 -
+iomanip
+-
 fstream
 -
 sstream
--
-cstdio
 -
 vector
 -
@@ -36,6 +36,8 @@ random
 iostream
 -
 vector
+-
+iomanip
 -
 
 /usr/local/include/boost/assert.hpp
