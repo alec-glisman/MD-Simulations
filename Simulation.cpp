@@ -258,3 +258,10 @@ void Simulation::log_data() {
         std::cout << "Unable to open log File";
     }
 }
+
+void Simulation::forceAndEnergetics() {
+    // TODO: Fill out function body
+}
+
+
+

@@ -69,7 +69,7 @@ private:
     doubleMatrix_t forces{m_n_particle, doubleVector_t(m_n_dimensions)};
 
     // Thermodynamic Variables
-    doubleVector_t W{};  // Related to pressure
+    doubleVector_t W{};  // 3X Internal Virial Energy
     doubleVector_t Temp_sim{};
     doubleVector_t Pressure{};
 
