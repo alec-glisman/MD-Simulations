@@ -1,0 +1,26 @@
+Simulation: test_file
+
+Input Parameters:
+dt 0.0001
+Total time 0.2
+Number of particles 256
+Number of steps 2000
+Box size 1
+Initial temperature 1
+Epsilon 1
+Sigma 1
+
+
+Simulation: test_file
+
+Input Parameters:
+dt 0.0001
+Total time 0.2
+Number of particles 256
+Number of steps 2000
+Box size 20
+Initial temperature 20
+Epsilon 20
+Sigma 1
+
+
