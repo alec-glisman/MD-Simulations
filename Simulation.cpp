@@ -241,7 +241,6 @@ void Simulation::create_frame() {
 void Simulation::log_data() {
     std::ofstream file(m_filename_log.c_str(), std::fstream::app);
     if (file.is_open()) {
-        file << "\n\n";
         file << "Simulation: " << m_filename << "\n";
         file << "\n";
         file << "Input Parameters:\n";
@@ -253,6 +252,7 @@ void Simulation::log_data() {
         file << "Initial temperature " << std::setprecision(4) << m_temp << "\n";
         file << "Epsilon " << std::setprecision(4) << m_temp << "\n";
         file << "Sigma " << std::setprecision(4) << m_sigma << "\n";
+        file << "\n\n";
         file.close();
     } else {
         std::cout << "Unable to open log File";
