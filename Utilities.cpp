@@ -49,25 +49,25 @@ void Utilities::print(doubleMatrix_t &vector, const string_t &string)
 {
     std::cout << string + "\n";
     // Loop through all rows
-    std::cout << "[[";
+    std::cout << "";
 
     for (intMatrix_t::size_type i = 0; i < vector.size(); i++) {
         if (i > 0) {
-            std::cout << " [";
+            std::cout << "";
         }
         // Loop through all columns (in each row)
         for (intVector_t::size_type j = 0; j < vector[i].size(); j++) {
             if (j == 0 || j == 1) {
-                std::cout << vector[i][j] << ",    "; // Print the value at that location (i,j)
+                std::cout << vector[i][j] << ", "; // Print the value at that location (i,j)
             } else {
-                std::cout << vector[i][j] << "]";
+                std::cout << vector[i][j] << "";
             }
         }
         if (i < vector.size() - 1) {
             std::cout << "\n";  // End-line character for next line
         }
     }
-    std::cout << "]\n\n";
+    std::cout << "\n\n";
 }
 
 
@@ -86,7 +86,7 @@ void Utilities::print(intMatrix_t &vector, const string_t &string)
         // Loop through all columns (in each row)
         for (intVector_t::size_type j = 0; j < vector[i].size(); j++) {
             if (j == 0 || j == 1) {
-                std::cout << vector[i][j] << ",    "; // Print the value at that location (i,j)
+                std::cout << vector[i][j] << ", "; // Print the value at that location (i,j)
             } else {
                 std::cout << vector[i][j] << "]";
             }

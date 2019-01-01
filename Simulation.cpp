@@ -33,10 +33,16 @@ Simulation::Simulation(int num_iter, int num_simulations,
         m_vol(box * box * box), m_rho(n_particle / (box * box * box)),
         m_filename(std::move(filename)),
         m_foldername(std::move(foldername)) {
+
+    // Set DoF
+    m_DoF = m_n_dimensions * (m_n_particle - 1);
+
     // Initialize radii with FCC lattice positions
     fcc_lattice_init();
-    string_t text = "FCC Radii:";
-    Utilities::print(radii, text);
+
+    // Initialize Velocities
+    velocity_init();
+    Utilities::print(velocities, "Velocity at t=0:");
 }
 
 
@@ -109,3 +115,68 @@ intVector_t Simulation::rangeVect(int start, int stop) {
     //toPrint(range, "Cell Range:");
     return range;
 }
+
+
+void Simulation::velocity_init() {
+    doubleVector_t vel_init_i(m_n_particle);
+    doubleVector_t vel_init_j(m_n_particle);
+    doubleVector_t vel_init_k(m_n_particle);
+    // Initialize Velocities from Gaussian (Boltzman) Distribution
+    std::seed_seq seed{43}; // Set seed
+    std::minstd_rand0 generator(seed); // Make generator for random values
+    double mean = 0;
+    double std_dev = pow(m_temp, 0.5);
+    std::normal_distribution<double> distribution(mean, std_dev); // Set distribution to sample from
+    // Loop over all of velocity matrix to give values
+    for (unsigned long p = 0; p < m_n_particle; p++) {
+        vel_init_i.at(p) = distribution(generator);
+        vel_init_j.at(p) = distribution(generator);
+        vel_init_k.at(p) = distribution(generator);
+    }
+
+    // Calculate the mean of each column vector (i, j, k)
+    double mean_i = std::accumulate(vel_init_i.begin(), vel_init_i.end(), 0.0) / m_n_particle;
+    double mean_j = std::accumulate(vel_init_j.begin(), vel_init_j.end(), 0.0) / m_n_particle;
+    double mean_k = std::accumulate(vel_init_k.begin(), vel_init_k.end(), 0.0) / m_n_particle;
+    // Subtract the mean from all entries to ensure average linear momentum = 0
+    for (unsigned long p = 0; p < m_n_particle; p++) {
+        vel_init_i.at(p) -= mean_i;
+        vel_init_j.at(p) -= mean_j;
+        vel_init_k.at(p) -= mean_k;
+    }
+    // Ensure total sum = 0 once more by making row 0 the opposite sum of row 1 -> n
+    double tot_i = std::accumulate(vel_init_i.begin(), vel_init_i.end(), -vel_init_i.at(0));
+    double tot_j = std::accumulate(vel_init_j.begin(), vel_init_j.end(), -vel_init_j.at(0));
+    double tot_k = std::accumulate(vel_init_k.begin(), vel_init_k.end(), -vel_init_k.at(0));
+    vel_init_i.at(0) = -tot_i;
+    vel_init_j.at(0) = -tot_j;
+    vel_init_k.at(0) = -tot_k;
+
+    // Make sure initialized velocities equal system Temp
+    double v2_total{0.0};
+    for (unsigned long p = 0; p < m_n_particle; p++) {
+        v2_total += (vel_init_i.at(p) * vel_init_i.at(p))
+                    + (vel_init_j.at(p) * vel_init_j.at(p))
+                    + (vel_init_k.at(p) * vel_init_k.at(p));
+    }
+    v2_total = 0.5 * v2_total;  // Scale by 1/2 to get Kinetic Energy
+    double kineticThermometer = m_temp * m_DoF * 0.5;
+    double vel_KE_factor2 = kineticThermometer / v2_total;
+    double vel_KE_factor = pow(vel_KE_factor2, 0.5);
+    // Scale velocities by the thermometer KE
+    for (unsigned long p = 0; p < m_n_particle; p++) {
+        // Scale the Values
+        vel_init_i.at(p) *= vel_KE_factor;
+        vel_init_j.at(p) *= vel_KE_factor;
+        vel_init_k.at(p) *= vel_KE_factor;
+        // Enter values in the velocity array
+        velocities.at(p).at(0) = vel_init_i.at(p);
+        velocities.at(p).at(1) = vel_init_j.at(p);
+        velocities.at(p).at(2) = vel_init_k.at(p);
+    }
+
+
+}
+
+
+

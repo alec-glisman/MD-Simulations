@@ -14,6 +14,7 @@
 #include <vector>
 #include <boost/range/irange.hpp> // i range
 #include <boost/range/algorithm_ext/push_back.hpp> // push_back
+#include <random>  // Normal distribution for velocity init
 
 
 // TYPE ALIASES
@@ -31,8 +32,6 @@ private:
     string_t m_foldername = "Q3.1-Energy";
     string_t m_filename = "sim00";
 
-    unsigned long m_n_dimensions = 3;
-
     // Simulation parameters that must be input by the constructor or will take these default values
     int m_num_iter = 4000;
     int m_num_simulations = 6;
@@ -43,6 +42,9 @@ private:
     double m_sigma = 1.0;
     double m_dt = 0.005;
     double m_t_total = 0.8;  // Overwritten later
+
+    unsigned long m_n_dimensions = 3;
+    long m_DoF = m_n_dimensions * (m_n_particle - 1);
 
     // Constant box properties
     double m_vol = m_box * m_box * m_box;
@@ -76,6 +78,9 @@ private: // Helper function that calculates triple Cartesian product
 
 private: // Helper function to calculate an integer range (vector) between start (inclusive) and stop (exclusive)
     intVector_t rangeVect(int start, int stop);
+
+private: // Initializes the velocities to have 0 lin momentum and KE that agrees with Temp
+    void velocity_init();
 
 };
 
