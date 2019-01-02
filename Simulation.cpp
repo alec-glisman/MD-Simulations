@@ -52,6 +52,8 @@ Simulation::Simulation(long num_iter, int num_simulations,
     create_frame();
     // Output Log Data
     log_data();
+
+    // TODO: Complete initialization data and call main()
 }
 
 
@@ -339,6 +341,7 @@ void Simulation::simulationTemperature() {
 
 
 void Simulation::velocityVerlet() {
+    // TODO: Convert this python code to C++
     // First half-timestep of algorithm
     velocities = self.velocities + 0.5 * self.dt * self.forces
     self.radii = self.radii + self.dt * self.velocities / self.box
@@ -359,6 +362,7 @@ void Simulation::velocityVerlet() {
 
 
 void Simulation::LJ_sim() {
+    // TODO: Add progress bar to display to terminal
     // NVE integration, Equilibration
     for ( ; m_iterationNumber < m_num_iter; m_iterationNumber++) {
         velocityVerlet(); // Perform iteration step
@@ -370,4 +374,6 @@ void Simulation::LJ_sim() {
 }
 
 
-
+void Simulation::main() {
+    LJ_sim();
+}

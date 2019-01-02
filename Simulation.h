@@ -127,6 +127,9 @@ private: // Verlet Integration Step Method (Velocity)
 private: // Perform complete NVE integration
     void LJ_sim();
 
+private: // Run entire program
+    void main();
+
 };
 
 
