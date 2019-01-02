@@ -5,6 +5,7 @@
 #ifndef MD_SIMULATIONS_SIMULATION_CLASS_H
 #define MD_SIMULATIONS_SIMULATION_CLASS_H
 
+
 // Internal Project Dependencies
 #include "Utilities.h"
 
@@ -39,11 +40,11 @@ private:
     string_t m_foldername = "Q3.1-Energy";
     string_t m_filename = "sim00";
 
-    string_t m_atom = "C";
-    double m_diameter = 0.5;
+    string_t m_atom = "C"; // Atomic species used in simulation
+    double m_diameter = 0.5; // Particle diameter
 
     // Simulation parameters that must be input by the constructor or will take these default values
-    int m_num_iter = 4000;
+    long m_num_iter = 4000;
     int m_num_simulations = 6;
     unsigned long m_n_particle = 50;
     double m_temp = 1.8;
@@ -53,9 +54,10 @@ private:
     double m_dt = 0.005;
     double m_t_total = 0.8;  // Overwritten later
 
-    unsigned long m_n_dimensions = 3;
-    long m_DoF = m_n_dimensions * (m_n_particle - 1);
-    long m_iterationNumber = 0;
+    unsigned long m_n_dimensions = 3; // Spatial dimensions in system
+    long m_DoF = m_n_dimensions * (m_n_particle - 1);  // Degrees of freedom
+    long m_iterationNumber = 0;  // Current iteration number that is incremented
+    int m_n_dump = 5; // Dump an XYZ frame every m_n_dump iterations
 
     // Constant box properties
     double m_vol = m_box * m_box * m_box;
@@ -83,7 +85,7 @@ public:  // Default trivial constructor
     Simulation();
 
 public: // Constructor with ``simulation variables''
-    Simulation(int num_iter, int num_simulations,
+    Simulation(long num_iter, int num_simulations,
                unsigned long n_particle, double temp,
                double box, double epsilon,
                double sigma, double dt,
@@ -113,14 +115,18 @@ private: // Calculate forces, U, W
 private: // Calculate KE
     void kineticEnergy();
 
-private: // Calculate PE
-    void potentialEnergy();
-
 private: // Calculate Total E
     void totalEnergy();
 
 private: // Calculate T_sim
     void simulationTemperature();
+
+private: // Verlet Integration Step Method (Velocity)
+    void velocityVerlet();
+
+private: // Perform complete NVE integration
+    void LJ_sim();
+
 };
 
 

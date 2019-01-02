@@ -20,7 +20,7 @@ Simulation::Simulation() = default;
 
 
 // Constructor to input simulation parameters
-Simulation::Simulation(int num_iter, int num_simulations,
+Simulation::Simulation(long num_iter, int num_simulations,
                        unsigned long n_particle, double temp,
                        double box, double epsilon,
                        double sigma, double dt,
@@ -260,7 +260,113 @@ void Simulation::log_data() {
 }
 
 void Simulation::forceAndEnergetics() {
-    // TODO: Fill out function body
+    // Values to append to vectors at end of function
+    double current_U{0};
+    double current_W{0};
+    doubleMatrix_t current_forces{m_n_particle, doubleVector_t(m_n_dimensions)};
+    // Loop through all pairwise interactions where atom j > i
+    for (unsigned long i = 0; i < m_n_particle; i++) {
+        for (unsigned long j = (i + 1); j < m_n_particle; j++) {
+            // Differential Distances
+            double dx = radii.at(i).at(0) - radii.at(j).at(0);
+            double dy = radii.at(i).at(1) - radii.at(j).at(1);
+            double dz = radii.at(i).at(2) - radii.at(j).at(2);
+            // Find smallest 'mirror' image using periodic boundary conditions
+            dx = (dx - std::rint(dx)) * m_box;
+            dy = (dy - std::rint(dy)) * m_box;
+            dz = (dz - std::rint(dz)) * m_box;
+            // Calculate |r_ij| = r2
+            double r2 = (dx * dx) + (dy * dy) + (dz * dz);
+            if (r2 < 0.00001) {
+                r2 = 0.02;  // Prevent divide by zero
+            }
+            // Calculate (sigma/r_ij)^6
+            double fr6 = pow(((m_sigma * m_sigma) / r2), 3);
+            // Calculate overall LJ force
+            double fpr = (48 * m_epsilon) * fr6 * (fr6 - 0.5) / r2;
+            // Calculate component forces by multiplying with differential
+            double fxi = fpr * dx;
+            double fyi = fpr * dy;
+            double fzi = fpr * dz;
+            // Increment forces with current calculation, use anti-symmetry of force
+            // f_ij = - f_ji
+            current_forces.at(i).at(0) += fxi;
+            current_forces.at(j).at(0) -= fxi;
+            current_forces.at(i).at(1) += fyi;
+            current_forces.at(j).at(1) -= fyi;
+            current_forces.at(i).at(2) += fzi;
+            current_forces.at(j).at(2) -= fzi;
+            // Increment potential by interaction energy
+            current_U += (4 * m_epsilon) * fr6 * (fr6 - 1);
+            // Increment W by interaction energy as well
+            current_W += -((dx * fxi) + (dy * fyi) + (dz * fzi));
+        }
+    }
+    // Update class variables for current iteration
+    E_potential.push_back(current_U);
+    W.push_back(current_W);
+    forces = current_forces;
+}
+
+
+void Simulation::kineticEnergy() {
+    double current_KE{0};
+    // Loop through all particles in system
+    for (unsigned int i = 0; i < m_n_particle; i++) {
+        current_KE += (velocities.at(i).at(0) * velocities.at(i).at(0))
+                      + (velocities.at(i).at(1) * velocities.at(i).at(1))
+                      + (velocities.at(i).at(2) * velocities.at(i).at(2));
+    }
+    // Divide by 2 to get 'proper' KE
+    current_KE = current_KE / 2.0;
+    // Append to KE vector
+    E_kinetic.push_back(current_KE);
+}
+
+
+void Simulation::totalEnergy() {
+    double current_E_total = E_kinetic.back() + E_potential.back();
+    E_total.push_back(current_E_total);
+}
+
+
+void Simulation::simulationTemperature() {
+    double current_T{};
+    current_T = (2.0 / m_DoF) * E_kinetic.back(); // Use most recent KE calculation
+    // Append to vector
+    Temp_sim.push_back(current_T);
+}
+
+
+void Simulation::velocityVerlet() {
+    // First half-timestep of algorithm
+    velocities = self.velocities + 0.5 * self.dt * self.forces
+    self.radii = self.radii + self.dt * self.velocities / self.box
+    // Calculate 'unwrapped' radii
+    self.unwrapped_radii = self.unwrapped_radii + self.dt * self.velocities / self.box
+    // Applying Periodic Boundary Conditions to self.radii
+    self.radii = self.radii - np.rint(self.radii)
+    // Second half-timestep
+    self.forces, U, W = self.forceAndEnergetics(self.box, self.radii, self.sigma, self.epsilon)
+    self.velocities = self.velocities + 0.5 * self.dt * self.forces
+    // Update system energetics
+    self.kineticEnergy()
+    self.simulationTemperature()  # Update simulation temperature
+    self.pressureCalc(W)
+    self.potentialEnergy(U)
+    self.totalEnergy()
+}
+
+
+void Simulation::LJ_sim() {
+    // NVE integration, Equilibration
+    for ( ; m_iterationNumber < m_num_iter; m_iterationNumber++) {
+        velocityVerlet(); // Perform iteration step
+    }
+    // Dump frame (if at correct iteration number)
+    if (m_iterationNumber % m_n_dump == 0) {
+        create_frame();
+    }
 }
 
 
