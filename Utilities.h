@@ -8,6 +8,7 @@
 #include <iostream>
 #include <vector>
 #include <iomanip> // Set precision of printing
+#include <fstream> // for file writing
 
 // TYPE ALIASES
 using doubleMatrix_t =  std::vector<std::vector<double> >;
@@ -33,6 +34,9 @@ public:
 
 public:
     static void print(intVector_t &vector, const string_t &string);
+
+public:
+    static void saveCSV(doubleVector_t &vector, const string_t &filename);
 
 };
 

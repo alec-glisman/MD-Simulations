@@ -37,6 +37,7 @@ class Simulation {
 public:
     string_t m_filename_xyz;
     string_t m_filename_log;
+    string_t m_filename_csv;
 
 private:
     // Log and other filesystem information
@@ -134,8 +135,15 @@ private: // Perform complete NVE integration
 private: // Calculate system pressure
     void pressureCalc();
 
+private: // Function to save variables
+    void saveVars();
+
+private: // Plot values
+    void plots();
+
 public: // Run entire program
     void main();
+
 
 };
 

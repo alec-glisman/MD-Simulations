@@ -113,3 +113,18 @@ void Utilities::print(intVector_t &vector, const string_t &string) {
     }
     std::cout << "]\n\n";
 }
+
+
+void Utilities::saveCSV(doubleVector_t &vector, const string_t &filename) {
+    std::ofstream file(filename.c_str()); // , std::fstream::app);
+    if (file.is_open()) {
+        for (unsigned int i = 0; i < vector.size(); i++) {
+            std::cout << std::setprecision(3) << std::fixed << vector.at(i);
+            std::cout << ",\n";
+        }
+        file.close();
+    } else {
+        std::cout << "Unable to open file";
+    }
+}
+

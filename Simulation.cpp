@@ -37,6 +37,7 @@ Simulation::Simulation(long num_iter, int num_simulations,
     // Full filenames/paths
     m_filename_xyz = "../" + m_foldername + "/" + m_filename + ".exyz";
     m_filename_log = "../" + m_foldername + "/" + m_filename + ".txt";
+    m_filename_csv = "../" + m_foldername + "/" + m_filename + ".csv";
 
 
     m_DoF = m_n_dimensions * (m_n_particle - 1);
@@ -251,7 +252,7 @@ void Simulation::log_data() {
         file << "Number of steps " << m_num_iter << "\n";
         file << "Box size " << std::setprecision(4) << m_temp << "\n";
         file << "Initial temperature " << std::setprecision(4) << m_temp << "\n";
-        file << "Epsilon " << std::setprecision(4) << m_temp << "\n";
+        file << "Epsilon " << std::setprecision(4) << m_epsilon << "\n";
         file << "Sigma " << std::setprecision(4) << m_sigma << "\n";
         file.close();
     } else {
@@ -273,7 +274,6 @@ void Simulation::forceAndEnergetics() {
             double dz = radii.at(i).at(2) - radii.at(j).at(2);
             // Find smallest 'mirror' image using periodic boundary conditions
             dx = (dx - std::rint(dx)) * m_box;
-            dy = (dy - std::rint(dy)) * m_box;
             dz = (dz - std::rint(dz)) * m_box;
             // Calculate |r_ij| = r2
             double r2 = (dx * dx) + (dy * dy) + (dz * dz);
@@ -394,12 +394,54 @@ void Simulation::pressureCalc() {
 }
 
 
+void Simulation::saveVars() {
+    // Variables to save (csv)
+    std::ofstream file(m_filename_csv.c_str()); // , std::fstream::app);
+    if (file.is_open()) {
+        // Header information
+        string_t delimiter{","};
+        file << "Iteration" << delimiter;
+        file << "E_total" << delimiter;
+        file << "E_kinetic" << delimiter;
+        file << "E_potential" << delimiter;
+        file << "Temperature" << delimiter;
+        file << "Pressure" << delimiter;
+        file << "\n";
+        // Loop through vectors to output information
+        for (unsigned int i = 0; i < E_total.size(); i++) {
+            file << i << delimiter;
+            file << std::setprecision(6) << std::fixed << E_total.at(i) << delimiter;
+            file << std::setprecision(6) << std::fixed << E_kinetic.at(i) << delimiter;
+            file << std::setprecision(6) << std::fixed << E_potential.at(i) << delimiter;
+            file << std::setprecision(6) << std::fixed << Temp_sim.at(i) << delimiter;
+            file << std::setprecision(6) << std::fixed << Pressure.at(i) << delimiter;
+            file << "\n";
+        }
+        file.close();
+    } else {
+        std::cout << "Unable to open save file";
+    }
+}
+
+
+void Simulation::plots() {
+    // Energy vs time
+    std::string energyPlot = "exec cd ../gnu-plots gnuplot  " + m_filename_csv + " " + "'" + m_filename + ".png'";
+    system(energyPlot.c_str());
+}
+
+
 void Simulation::main() {
     // Start timer
     auto start = std::chrono::high_resolution_clock::now();
     std::cout << "\n"; // Just for aesthetics on output
 
-    LJ_sim(); // Main simulation with Lennard-Jones potential
+    // Main simulation with Lennard-Jones potential
+    LJ_sim();
+    // Save variables of interest
+    saveVars();
+    // Make Plots
+    plots();
 
     // End timer
     auto stop = std::chrono::high_resolution_clock::now();
@@ -421,5 +463,4 @@ void Simulation::main() {
     } else {
         std::cout << "Unable to open log File";
     }
-
 }

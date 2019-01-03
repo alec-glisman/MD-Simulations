@@ -12,10 +12,6 @@ chrono
 iostream
 -
 
-/Users/alecglisman/CLionProjects/MD-Simulations/Simulation.cpp
-Simulation.h
-/Users/alecglisman/CLionProjects/MD-Simulations/Simulation.h
-
 /Users/alecglisman/CLionProjects/MD-Simulations/Simulation.h
 Utilities.h
 /Users/alecglisman/CLionProjects/MD-Simulations/Utilities.h
@@ -49,6 +45,12 @@ vector
 -
 iomanip
 -
+fstream
+-
+
+/Users/alecglisman/CLionProjects/MD-Simulations/main.cpp
+Simulation.h
+/Users/alecglisman/CLionProjects/MD-Simulations/Simulation.h
 
 /usr/local/include/boost/assert.hpp
 boost/config.hpp
