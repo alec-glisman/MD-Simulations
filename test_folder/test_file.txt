@@ -3,11 +3,11 @@ Simulation: test_file
 Input Parameters:
 dt 0.005
 Total time 5
-Number of particles 100
+Number of particles 80
 Number of steps 1000
-Box size 3
-Initial temperature 3
-Epsilon 1
+Box size 7
+Initial temperature 7
+Epsilon 2
 Sigma 1
 Time taken by main: 0 minutes, 1 seconds 
 	1000 iterations/second 

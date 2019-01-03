@@ -40,7 +40,7 @@ Simulation::Simulation(long num_iter, int num_simulations,
     m_filename_csv = "../" + m_foldername + "/" + m_filename + ".csv";
 
 
-    m_DoF = m_n_dimensions * (m_n_particle - 1);
+    m_DoF = m_n_dimensions * (n_particle - 1);
 
     // Initialize radii with FCC lattice positions
     fcc_lattice_init();
@@ -274,6 +274,7 @@ void Simulation::forceAndEnergetics() {
             double dz = radii.at(i).at(2) - radii.at(j).at(2);
             // Find smallest 'mirror' image using periodic boundary conditions
             dx = (dx - std::rint(dx)) * m_box;
+            dy = (dy - std::rint(dy)) * m_box;
             dz = (dz - std::rint(dz)) * m_box;
             // Calculate |r_ij| = r2
             double r2 = (dx * dx) + (dy * dy) + (dz * dz);
@@ -426,7 +427,7 @@ void Simulation::saveVars() {
 
 void Simulation::plots() {
     // Energy vs time
-    std::string energyPlot = "exec cd ../gnu-plots gnuplot  " + m_filename_csv + " " + "'" + m_filename + ".png'";
+    std::string energyPlot = "cd ../gnu-plots; gnuplot  -p energy_time.gnuplot";
     system(energyPlot.c_str());
 }
 

@@ -5,10 +5,10 @@ int main() {
     // Simulation variables
     long num_iter = 1000;
     int num_simulations = 1;
-    unsigned long n_particle = 100;
-    double temp = 3.0;
-    double box = 30.0;
-    double epsilon = 1.0;
+    unsigned long n_particle = 80;
+    double temp = 7.0;
+    double box = 5.0;
+    double epsilon = 2.0;
     double sigma = 1.0;
     double dt = 0.005;
     std::string filename = "test_file";

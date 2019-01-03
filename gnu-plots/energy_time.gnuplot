@@ -10,7 +10,7 @@ set term png size 1000, 800                                                     
 unset key                                                                           # no key
 set output 'energy_time.png'                                                                     # Specify output format
 set datafile separator ','                                                          # Used for CSV file input
-plot '../test_folder/test_file.csv' notitle using 1:6 with linespoints                                        # Plot command
+plot '../test_folder/test_file.csv' using 1:2 with linespoints                                        # Plot command
 
 # Replot and show output in X11
 set term X11

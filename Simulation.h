@@ -41,31 +41,31 @@ public:
 
 private:
     // Log and other filesystem information
-    string_t m_foldername = "Q3.1-Energy";
-    string_t m_filename = "sim00";
+    const string_t m_foldername = "Q3.1-Energy";
+    const string_t m_filename = "sim00";
 
     string_t m_atom = "C"; // Atomic species used in simulation
-    double m_diameter = 0.5; // Particle diameter
+    const double m_diameter = 0.5; // Particle diameter
 
     // Simulation parameters that must be input by the constructor or will take these default values
-    long m_num_iter = 4000;
-    int m_num_simulations = 6;
-    unsigned long m_n_particle = 50;
-    double m_temp = 1.8;
-    double m_box = 1.0;
-    double m_epsilon = 1.0;
-    double m_sigma = 1.0;
-    double m_dt = 0.005;
-    double m_t_total = 0.8;  // Overwritten later
+    const long m_num_iter = 4000;
+    const int m_num_simulations = 6;
+    const unsigned long m_n_particle = 50;
+    const double m_temp = 1.8;
+    const double m_box = 1.0;
+    const double m_epsilon = 1.0;
+    const double m_sigma = 1.0;
+    const double m_dt = 0.005;
+    const double m_t_total = 0.8;  // Overwritten later
 
-    unsigned long m_n_dimensions = 3; // Spatial dimensions in system
+    const static unsigned long m_n_dimensions = 3; // Spatial dimensions in system
     long m_DoF = m_n_dimensions * (m_n_particle - 1);  // Degrees of freedom
     long m_iterationNumber = 0;  // Current iteration number that is incremented
-    int m_n_dump = 5; // Dump an XYZ frame every m_n_dump iterations
+    const int m_n_dump = 1; // Dump an XYZ frame every m_n_dump iterations
 
     // Constant box properties
-    double m_vol = m_box * m_box * m_box;
-    double m_rho = m_n_particle / m_vol;
+    const double m_vol = m_box * m_box * m_box;
+    const double m_rho = m_n_particle / m_vol;
 
     // Kinematic Variables
     doubleMatrix_t radii{m_n_particle, doubleVector_t(m_n_dimensions)};
