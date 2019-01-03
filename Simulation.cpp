@@ -35,7 +35,7 @@ Simulation::Simulation(long num_iter, int num_simulations,
         m_foldername(std::move(foldername)) {
 
     // Full filenames/paths
-    m_filename_xyz = "../" + m_foldername + "/" + m_filename + ".xyz";
+    m_filename_xyz = "../" + m_foldername + "/" + m_filename + ".exyz";
     m_filename_log = "../" + m_foldername + "/" + m_filename + ".txt";
 
 
@@ -43,17 +43,11 @@ Simulation::Simulation(long num_iter, int num_simulations,
 
     // Initialize radii with FCC lattice positions
     fcc_lattice_init();
-
     // Initialize Velocities
     velocity_init();
-    //Utilities::print(velocities, "Velocity at t=0:");
-
-    // Make initial FCC frame
-    create_frame();
     // Output Log Data
     log_data();
 
-    // TODO: Complete initialization data and call main()
 }
 
 
@@ -78,13 +72,16 @@ void Simulation::fcc_lattice_init() {
     intMatrix_t cartProd = cartesianProduct3(range);
 
     // Iterate through each row of Cartesian Product until n_particles reached
-    int row = 0;
-    for (int i = 0; i < (m_n_particle - 1); i++) {
+    unsigned int row = 0;
+    for (unsigned int i = 0; i < (m_n_particle - 1); i++) {
         // 4 Atoms in a unit cell
-        for (int a : rangeVect(0, 4)) {
-            radius_[row][0] = (r_fcc[a][0] + cartProd[i][0]) * cell_size / m_box;
-            radius_[row][1] = (r_fcc[a][1] + cartProd[i][1]) * cell_size / m_box;
-            radius_[row][2] = (r_fcc[a][2] + cartProd[i][2]) * cell_size / m_box;
+        for (auto a : rangeVect(0, 4)) {
+            radius_.at(row).at(0) = (r_fcc.at(static_cast<unsigned int>(a)).at(0) + cartProd.at(i).at(0))
+                    * cell_size / m_box;
+            radius_.at(row).at(1) = (r_fcc.at(static_cast<unsigned int>(a)).at(1) + cartProd.at(i).at(1))
+                    * cell_size / m_box;
+            radius_.at(row).at(2) = (r_fcc.at(static_cast<unsigned int>(a)).at(2) + cartProd.at(i).at(2))
+                    * cell_size / m_box;
             row++;
             if (row == m_n_particle) {
                 // Set Initial Radii positions
@@ -101,15 +98,15 @@ intMatrix_t Simulation::cartesianProduct3(intVector_t &vector) {
     unsigned long numCols = 3;
     intMatrix_t cartProd{numRows,
                          intVector_t(numCols)};
-    int row = 0;
+    unsigned int row = 0;
     // Triple for-loop to go through every permutation of range
     for (int i = 0; i < vector.size(); i++) {
         for (int j = 0; j < vector.size(); j++) {
             for (int k = 0; k < vector.size(); k++) {
                 // Fill in values
-                cartProd[row][0] = i;
-                cartProd[row][1] = j;
-                cartProd[row][2] = k;
+                cartProd.at(row).at(0) = i;
+                cartProd.at(row).at(1) = j;
+                cartProd.at(row).at(2) = k;
                 // Increment to next row in matrix to fill
                 row++;
             }
@@ -206,22 +203,22 @@ void Simulation::create_frame() {
     // File to write to
     std::ofstream file(m_filename_xyz.c_str(), std::fstream::app);
     if (file.is_open()) {
-        string_t delimiter = "      ";
+        string_t delimiter = "\t";
         // Header Information
         file << n_particleString + "\n"; // Number of particles
         file << "Lattice=\"" + boxString + " 0.0 0.0 0.0 "
                 + boxString + " 0.0 0.0 0.0 "
                 + boxString + "\" ";
-        file << "Properties=\"species:S:1:pos:R:3:vel:R:3:diameter:R:1\" ";
-        file << "Time=" + timeString + "\n";
-        // Atom Information (1-Species, 3-Position, 3-Velocity, 1-Diameter)
+        file << "Properties=pos:R:3:velo:R:3:species:S:1 "; // species:S:1:  :Radius:R:1
+        file << "Time=" + timeString;
+        file << "\n";
+        // Atom Information (3-Position, 3-Velocity, 1-Radius)
         for (int i = 0; i < m_n_particle; i++) {
-            file << m_atom + "\t\t";
-            file << radii[i][0];
+            file << std::fixed << std::setprecision(4) << radii[i][0];
             file << delimiter;
-            file << radii[i][1];
+            file << std::fixed << std::setprecision(4) << radii[i][1];
             file << delimiter;
-            file << radii[i][2];
+            file << std::fixed << std::setprecision(4) << radii[i][2];
             file << delimiter;
             file << std::fixed << std::setprecision(4) << velocities[i][0];
             file << delimiter;
@@ -229,10 +226,12 @@ void Simulation::create_frame() {
             file << delimiter;
             file << std::fixed << std::setprecision(4) << velocities[i][2];
             file << delimiter;
-            file << m_diameter;
+            file << m_atom;
+            /* file << delimiter;
+            file << (m_diameter * 0.5); */
             file << "\n";
         }
-        file << "\n\n";
+        /* file << "\n\n"; */
         file.close();
     } else {
         std::cout << "Unable to open XYZ File";
@@ -254,7 +253,6 @@ void Simulation::log_data() {
         file << "Initial temperature " << std::setprecision(4) << m_temp << "\n";
         file << "Epsilon " << std::setprecision(4) << m_temp << "\n";
         file << "Sigma " << std::setprecision(4) << m_sigma << "\n";
-        file << "\n\n";
         file.close();
     } else {
         std::cout << "Unable to open log File";
@@ -341,39 +339,87 @@ void Simulation::simulationTemperature() {
 
 
 void Simulation::velocityVerlet() {
-    // TODO: Convert this python code to C++
     // First half-timestep of algorithm
-    velocities = self.velocities + 0.5 * self.dt * self.forces
-    self.radii = self.radii + self.dt * self.velocities / self.box
-    // Calculate 'unwrapped' radii
-    self.unwrapped_radii = self.unwrapped_radii + self.dt * self.velocities / self.box
-    // Applying Periodic Boundary Conditions to self.radii
-    self.radii = self.radii - np.rint(self.radii)
+    for (unsigned int i = 0; i < m_n_particle; i++) {
+        for (unsigned int j = 0; j < m_n_dimensions; j++) {
+            velocities.at(i).at(j) += 0.5 * m_dt * forces.at(i).at(j);
+            radii.at(i).at(j) += m_dt * velocities.at(i).at(j) / m_box;
+            // Calculate 'unwrapped' radii
+            unwrapped_radii.at(i).at(j) += m_dt * velocities.at(i).at(j) / m_box;
+            // Applying Periodic Boundary Conditions to self.radii
+            radii.at(i).at(j) -= std::rint(radii.at(i).at(j));
+        }
+    }
     // Second half-timestep
-    self.forces, U, W = self.forceAndEnergetics(self.box, self.radii, self.sigma, self.epsilon)
-    self.velocities = self.velocities + 0.5 * self.dt * self.forces
+    forceAndEnergetics();  // Update forces
+    for (unsigned int i = 0; i < m_n_particle; i++) {
+        for (unsigned int j = 0; j < m_n_dimensions; j++) {
+            velocities.at(i).at(j) += 0.5 * m_dt * forces.at(i).at(j);
+        }
+    }
     // Update system energetics
-    self.kineticEnergy()
-    self.simulationTemperature()  # Update simulation temperature
-    self.pressureCalc(W)
-    self.potentialEnergy(U)
-    self.totalEnergy()
+    kineticEnergy();
+    simulationTemperature();
+    totalEnergy();
+    pressureCalc();
 }
 
 
 void Simulation::LJ_sim() {
-    // TODO: Add progress bar to display to terminal
+    // Progress bar data
+    ProgressBar progressBar(static_cast<unsigned int>(m_num_iter), 70);
     // NVE integration, Equilibration
     for ( ; m_iterationNumber < m_num_iter; m_iterationNumber++) {
-        velocityVerlet(); // Perform iteration step
+        // Perform iteration step
+        velocityVerlet();
+
+        // Update Progress Bar
+        ++progressBar;  // record the tick
+        progressBar.display();  // display the bar
+
+        // Dump frame (if at correct iteration number)
+        if (m_iterationNumber % m_n_dump == 0) {
+            create_frame();
+        }
     }
-    // Dump frame (if at correct iteration number)
-    if (m_iterationNumber % m_n_dump == 0) {
-        create_frame();
-    }
+    progressBar.done();  // tell the bar to finish
+}
+
+
+void Simulation::pressureCalc() {
+    double P_id{m_rho * Temp_sim.back()};  // Ideal pressure using system Temp
+    double P_ex{W.back() / (3.0 * m_vol)};  // Virial Pressure term
+    double current_P{P_id + P_ex};
+    Pressure.push_back(current_P); // Append current pressure
 }
 
 
 void Simulation::main() {
-    LJ_sim();
+    // Start timer
+    auto start = std::chrono::high_resolution_clock::now();
+    std::cout << "\n"; // Just for aesthetics on output
+
+    LJ_sim(); // Main simulation with Lennard-Jones potential
+
+    // End timer
+    auto stop = std::chrono::high_resolution_clock::now();
+    auto durationMin = std::chrono::duration_cast<std::chrono::minutes>(stop - start);
+    auto durationSec = std::chrono::duration_cast<std::chrono::seconds>(stop - start);
+    std::cout << "Time taken by main: " << durationMin.count() << " minutes, ";
+    std::cout << durationSec.count() % 60 << " seconds \n";
+    std::cout << "\t" << m_num_iter / durationSec.count() << " iterations/second \n";
+    std::cout << "\n"; // Just for aesthetics on output
+
+    // Output timing data to log file
+    std::ofstream file(m_filename_log.c_str(), std::fstream::app);
+    if (file.is_open()) {
+        file << "Time taken by main: " << durationMin.count() << " minutes, ";
+        file << durationSec.count() % 60 << " seconds \n";
+        file << "\t" << m_num_iter / durationSec.count() << " iterations/second \n";
+        file << "\n\n";
+        file.close();
+    } else {
+        std::cout << "Unable to open log File";
+    }
+
 }

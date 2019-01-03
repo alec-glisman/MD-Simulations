@@ -4,6 +4,7 @@
 CMakeFiles/MD_Simulations.dir/Old_Tests.cpp.o
  /Users/alecglisman/CLionProjects/MD-Simulations/Old_Tests.cpp
 CMakeFiles/MD_Simulations.dir/Simulation.cpp.o
+ /Users/alecglisman/CLionProjects/MD-Simulations/ProgressBar.hpp
  /Users/alecglisman/CLionProjects/MD-Simulations/Simulation.cpp
  /Users/alecglisman/CLionProjects/MD-Simulations/Simulation.h
  /Users/alecglisman/CLionProjects/MD-Simulations/Utilities.h
@@ -413,6 +414,7 @@ CMakeFiles/MD_Simulations.dir/Utilities.cpp.o
  /Users/alecglisman/CLionProjects/MD-Simulations/Utilities.cpp
  /Users/alecglisman/CLionProjects/MD-Simulations/Utilities.h
 CMakeFiles/MD_Simulations.dir/main.cpp.o
+ /Users/alecglisman/CLionProjects/MD-Simulations/ProgressBar.hpp
  /Users/alecglisman/CLionProjects/MD-Simulations/Simulation.h
  /Users/alecglisman/CLionProjects/MD-Simulations/Utilities.h
  /Users/alecglisman/CLionProjects/MD-Simulations/main.cpp

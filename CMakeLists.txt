@@ -12,7 +12,7 @@ find_package(Boost 1.68.0)
 
 if (Boost_FOUND)
     include_directories(${Boost_INCLUDE_DIRS})
-    add_executable(MD_Simulations main.cpp Simulation.cpp Simulation.h Utilities.cpp Utilities.h Old_Tests.cpp)
+    add_executable(MD_Simulations main.cpp Simulation.cpp Simulation.h Utilities.cpp Utilities.h Old_Tests.cpp ProgressBar.hpp)
     target_link_libraries(MD_Simulations ${Boost_LIBRARIES})
 endif ()
 

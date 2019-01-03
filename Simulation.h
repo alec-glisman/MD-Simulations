@@ -8,6 +8,7 @@
 
 // Internal Project Dependencies
 #include "Utilities.h"
+#include "ProgressBar.hpp"
 
 // External Dependencies
 #include <cmath> // pow, ceil
@@ -19,6 +20,8 @@
 #include <boost/range/irange.hpp> // i range
 #include <boost/range/algorithm_ext/push_back.hpp> // push_back
 #include <random>  // Normal distribution for velocity init
+#include <chrono>  // Timing program execution
+// #include "python/Python.h"  // To use GSD Output function
 
 
 // TYPE ALIASES
@@ -65,6 +68,7 @@ private:
 
     // Kinematic Variables
     doubleMatrix_t radii{m_n_particle, doubleVector_t(m_n_dimensions)};
+    doubleMatrix_t unwrapped_radii{m_n_particle, doubleVector_t(m_n_dimensions)};
     doubleMatrix_t velocities{m_n_particle, doubleVector_t(m_n_dimensions)};
 
     // Dynamic Variables
@@ -127,7 +131,10 @@ private: // Verlet Integration Step Method (Velocity)
 private: // Perform complete NVE integration
     void LJ_sim();
 
-private: // Run entire program
+private: // Calculate system pressure
+    void pressureCalc();
+
+public: // Run entire program
     void main();
 
 };

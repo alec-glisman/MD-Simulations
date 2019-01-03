@@ -83,6 +83,9 @@
 		<Unit filename="/Users/alecglisman/CLionProjects/MD-Simulations/Old_Tests.cpp">
 			<Option target="MD_Simulations"/>
 		</Unit>
+		<Unit filename="/Users/alecglisman/CLionProjects/MD-Simulations/ProgressBar.hpp">
+			<Option target="MD_Simulations"/>
+		</Unit>
 		<Unit filename="/Users/alecglisman/CLionProjects/MD-Simulations/Simulation.cpp">
 			<Option target="MD_Simulations"/>
 		</Unit>

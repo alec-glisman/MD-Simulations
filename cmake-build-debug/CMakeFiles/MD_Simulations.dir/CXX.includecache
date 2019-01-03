@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/Users/alecglisman/CLionProjects/MD-Simulations/ProgressBar.hpp
+chrono
+-
+iostream
+-
+
 /Users/alecglisman/CLionProjects/MD-Simulations/Simulation.cpp
 Simulation.h
 /Users/alecglisman/CLionProjects/MD-Simulations/Simulation.h
@@ -13,6 +19,8 @@ Simulation.h
 /Users/alecglisman/CLionProjects/MD-Simulations/Simulation.h
 Utilities.h
 /Users/alecglisman/CLionProjects/MD-Simulations/Utilities.h
+ProgressBar.hpp
+/Users/alecglisman/CLionProjects/MD-Simulations/ProgressBar.hpp
 cmath
 -
 iostream
@@ -30,6 +38,8 @@ boost/range/irange.hpp
 boost/range/algorithm_ext/push_back.hpp
 -
 random
+-
+chrono
 -
 
 /Users/alecglisman/CLionProjects/MD-Simulations/Utilities.h
