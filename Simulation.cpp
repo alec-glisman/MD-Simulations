@@ -24,7 +24,8 @@ Simulation::Simulation(long num_iter, int num_simulations,
                        unsigned long n_particle, double temp,
                        double box, double epsilon,
                        double sigma, double dt,
-                       string_t filename, string_t foldername) :
+                       string_t filename, string_t foldername,
+                       int n_dump) :
         m_num_iter(num_iter), m_num_simulations(num_simulations),
         m_temp(temp), m_n_particle(n_particle),
         m_box(box), m_epsilon(epsilon),
@@ -32,7 +33,8 @@ Simulation::Simulation(long num_iter, int num_simulations,
         m_t_total(dt * num_iter),
         m_vol(box * box * box), m_rho(n_particle / (box * box * box)),
         m_filename(std::move(filename)),
-        m_foldername(std::move(foldername)) {
+        m_foldername(std::move(foldername)),
+        m_n_dump(n_dump){
 
     // Full filenames/paths
     m_filename_xyz = "../" + m_foldername + "/" + m_filename + ".exyz";
@@ -132,7 +134,7 @@ void Simulation::velocity_init() {
     doubleVector_t vel_init_i(m_n_particle);
     doubleVector_t vel_init_j(m_n_particle);
     doubleVector_t vel_init_k(m_n_particle);
-    // Initialize Velocities from Gaussian (Boltzman) Distribution
+    // Initialize Velocities from Gaussian (Boltzmann) Distribution
     std::seed_seq seed{43}; // Set seed
     std::minstd_rand0 generator(seed); // Make generator for random values
     double mean = 0;
@@ -230,11 +232,8 @@ void Simulation::create_frame() {
             file << std::fixed << std::setprecision(4) << velocities[i][2];
             file << delimiter;
             file << m_atom;
-            /* file << delimiter;
-            file << (m_diameter * 0.5); */
             file << "\n";
         }
-        /* file << "\n\n"; */
         file.close();
     } else {
         std::cout << "Unable to open XYZ File";
@@ -253,6 +252,8 @@ void Simulation::log_data() {
         file << "Number of particles " << m_n_particle << "\n";
         file << "Number of steps " << m_num_iter << "\n";
         file << "Box size " << std::setprecision(4) << m_temp << "\n";
+        file << "Volume " << std::setprecision(4) << m_vol << "\n";
+        file << "Density " << std::setprecision(4) << m_rho << "\n";
         file << "Initial temperature " << std::setprecision(4) << m_temp << "\n";
         file << "Epsilon " << std::setprecision(4) << m_epsilon << "\n";
         file << "Sigma " << std::setprecision(4) << m_sigma << "\n";
@@ -450,6 +451,10 @@ void Simulation::main() {
     saveVars();
     // Make Plots
     plots();
+    // Compress .exyz file
+    std::string compress = "cd ../" + m_foldername + "; gzip " + m_filename + ".exyz";
+    system(compress.c_str());
+
 
     // End timer
     auto stop = std::chrono::high_resolution_clock::now();

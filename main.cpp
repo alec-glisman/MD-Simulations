@@ -1,18 +1,18 @@
 #include "Simulation.h"
 
-
 int main() {
     // Simulation variables
-    long num_iter = 1000;
+    long num_iter = 500;
     int num_simulations = 1;
-    unsigned long n_particle = 80;
-    double temp = 7.0;
-    double box = 5.0;
-    double epsilon = 2.0;
-    double sigma = 1.0;
+    unsigned long n_particle = 256;
+    double temp = 10.0;
+    double box = 40.0;
+    double epsilon = 1.0;  // Depth of the potential well
+    double sigma = 3.0;  // (Max) Length over which interactions can occur
     double dt = 0.005;
-    std::string filename = "test_file";
-    std::string foldername = "test_folder";
+    std::string filename = "01";
+    std::string foldername = "Simulation-Output";
+    int n_dump = 5; // Dump XYZ frame every 5 iterations
 
     // delete files (if they previously existed)
     std::string deleteCommand = "exec rm -r ~/CLionProjects/MD-Simulations/" + foldername;
@@ -23,7 +23,8 @@ int main() {
                     n_particle, temp,
                     box, epsilon,
                     sigma, dt,
-                    filename, foldername};
+                    filename, foldername,
+                    n_dump};
     sim1.main();  // Run Simulation
 
 }

@@ -45,7 +45,7 @@ private:
     const string_t m_filename = "sim00";
 
     string_t m_atom = "C"; // Atomic species used in simulation
-    const double m_diameter = 0.5; // Particle diameter
+    /* const double m_diameter = 0.5; // Particle diameter */
 
     // Simulation parameters that must be input by the constructor or will take these default values
     const long m_num_iter = 4000;
@@ -57,11 +57,11 @@ private:
     const double m_sigma = 1.0;
     const double m_dt = 0.005;
     const double m_t_total = 0.8;  // Overwritten later
+    const int m_n_dump = 1; // Dump an XYZ frame every m_n_dump iterations
 
     const static unsigned long m_n_dimensions = 3; // Spatial dimensions in system
     long m_DoF = m_n_dimensions * (m_n_particle - 1);  // Degrees of freedom
     long m_iterationNumber = 0;  // Current iteration number that is incremented
-    const int m_n_dump = 1; // Dump an XYZ frame every m_n_dump iterations
 
     // Constant box properties
     const double m_vol = m_box * m_box * m_box;
@@ -94,7 +94,8 @@ public: // Constructor with ``simulation variables''
                unsigned long n_particle, double temp,
                double box, double epsilon,
                double sigma, double dt,
-               string_t filename, string_t foldername);
+               string_t filename, string_t foldername,
+               int n_dump);
 
 private: // Initializes lattice (radii) with FCC configuration
     void fcc_lattice_init();
