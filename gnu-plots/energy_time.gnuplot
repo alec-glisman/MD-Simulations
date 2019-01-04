@@ -7,9 +7,9 @@ set ylabel "Energy"                                                             
 set grid                                                                            # Add grid to the plot
 set term png size 1000, 800                                                         # Save file as png (1000px x 800px)
 unset key                                                                           # no key
-set output ARG1                                                                # Specify output format
+set output ARG1                                                                     # Specify output format
 set datafile separator ','                                                          # Used for CSV file input
-plot '../test_folder/test_file.csv' using 1:2 with linespoints notitle              # Plot command
+plot ARG2 using 1:2 with linespoints notitle                                        # Plot command
 
 # Replot and show output in X11
 set term X11

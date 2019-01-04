@@ -38,7 +38,9 @@ Simulation::Simulation(long num_iter, int num_simulations,
     m_filename_xyz = "../" + m_foldername + "/" + m_filename + ".exyz";
     m_filename_log = "../" + m_foldername + "/" + m_filename + ".txt";
     m_filename_csv = "../" + m_foldername + "/" + m_filename + ".csv";
-
+    // Make directory if it does not already exist
+    std::string mkdir = "mkdir ../" + m_foldername;
+    system(mkdir.c_str());
 
     m_DoF = m_n_dimensions * (n_particle - 1);
 
@@ -427,8 +429,13 @@ void Simulation::saveVars() {
 
 void Simulation::plots() {
     // Energy vs time
-    std::string energyPlot = "cd ../gnu-plots; gnuplot  -p energy_time.gnuplot";
+    std::string energyPlot = "cd ../gnu-plots; gnuplot -p -c energy_time.gnuplot \'../" + m_foldername + "/" + m_filename + "_energy_time.png\' "
+                                + "\'../" + m_foldername + "/" + m_filename + ".csv\' ";
     system(energyPlot.c_str());
+    // Pressure vs time
+    std::string pressurePlot = "cd ../gnu-plots; gnuplot -p -c pressure_time.gnuplot \'../" + m_foldername + "/" + m_filename + "_pressure_time.png\' "
+                                + "\'../" + m_foldername + "/" + m_filename + ".csv\' ";
+    system(pressurePlot.c_str());
 }
 
 

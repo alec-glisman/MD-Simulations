@@ -9,7 +9,7 @@ Box size 7
 Initial temperature 7
 Epsilon 2
 Sigma 1
-Time taken by main: 0 minutes, 1 seconds 
-	1000 iterations/second 
+Time taken by main: 0 minutes, 2 seconds 
+	500 iterations/second 
 
 

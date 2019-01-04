@@ -15,7 +15,7 @@ int main() {
     std::string foldername = "test_folder";
 
     // delete files (if they previously existed)
-    std::string deleteCommand = "exec rm -r ~/CLionProjects/MD-Simulations/" + foldername + "/*";
+    std::string deleteCommand = "exec rm -r ~/CLionProjects/MD-Simulations/" + foldername;
     system(deleteCommand.c_str());
 
     // Initialize class
