@@ -9,7 +9,7 @@ set term png size 1000, 800                                                     
 unset key                                                                           # no key
 set output ARG1                                                                     # Specify output format
 set datafile separator ','                                                          # Used for CSV file input
-plot ARG2 using 1:5 with linespoints notitle                                        # Plot command
+plot ARG2 using 1:6 with linespoints notitle                                        # Plot command
 
 # Replot and show output in X11
 set term X11

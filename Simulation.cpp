@@ -269,7 +269,7 @@ void Simulation::forceAndEnergetics() {
     double current_W{0};
     doubleMatrix_t current_forces{m_n_particle, doubleVector_t(m_n_dimensions)};
     // Loop through all pairwise interactions where atom j > i
-#pragma omp parallel for collapse(1) // Make new team of threads for parallel for-loop
+#pragma omp parallel for // Make new team of threads for parallel for-loop
     for (unsigned long i = 0; i < m_n_particle; i++) {
         for (unsigned long j = (i + 1); j < m_n_particle; j++) {
             /*// Avoid double counting of forces
@@ -306,7 +306,7 @@ void Simulation::forceAndEnergetics() {
             current_forces.at(i).at(2) += fzi;
             current_forces.at(j).at(2) -= fzi;
             // Increment potential by interaction energy
-            current_U += (4 * m_epsilon) * fr6 * (fr6 - 1);
+            current_U += (4.0 * m_epsilon) * fr6 * (fr6 - 1);
             // Increment W by interaction energy as well
             current_W += -((dx * fxi) + (dy * fyi) + (dz * fzi));
         }
@@ -321,7 +321,6 @@ void Simulation::forceAndEnergetics() {
 void Simulation::kineticEnergy() {
     double current_KE{0};
     // Loop through all particles in system
-#pragma omp parallel for collapse(1) // Make new team of threads for parallel for-loop
     for (unsigned int i = 0; i < m_n_particle; i++) {
         current_KE += (velocities.at(i).at(0) * velocities.at(i).at(0))
                       + (velocities.at(i).at(1) * velocities.at(i).at(1))
@@ -350,7 +349,6 @@ void Simulation::simulationTemperature() {
 
 void Simulation::velocityVerlet() {
     // First half-timestep of algorithm
-#pragma omp parallel for collapse(2) // Make new team of threads for parallel for-loop
     for (unsigned int i = 0; i < m_n_particle; i++) {
         for (unsigned int j = 0; j < m_n_dimensions; j++) {
             velocities.at(i).at(j) += 0.5 * m_dt * forces.at(i).at(j);
@@ -363,7 +361,6 @@ void Simulation::velocityVerlet() {
     }
     // Second half-timestep
     forceAndEnergetics();  // Update forces
-#pragma omp parallel for collapse(2) // Make new team of threads for parallel for-loop
     for (unsigned int i = 0; i < m_n_particle; i++) {
         for (unsigned int j = 0; j < m_n_dimensions; j++) {
             velocities.at(i).at(j) += 0.5 * m_dt * forces.at(i).at(j);
@@ -379,7 +376,7 @@ void Simulation::velocityVerlet() {
 
 void Simulation::LJ_sim() {
     // Progress bar data
-    ProgressBar progressBar(static_cast<unsigned int>(m_num_iter), 70);
+    ProgressBar progressBar(static_cast<unsigned int>(m_num_iter), 60);
     // NVE integration, Equilibration
     for ( ; m_iterationNumber < m_num_iter; m_iterationNumber++) {
         // Perform iteration step

@@ -11,26 +11,18 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56d34db4-5ae9-4e50-be71-64deecae5c5b" name="Default Changelist" comment="">
+    <list default="true" id="56d34db4-5ae9-4e50-be71-64deecae5c5b" name="Default Changelist" comment="Checked class against previous Python implementation. Numbers are similiar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Simulation-Output/01.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation-Output/01.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Simulation-Output/01.exyz.gz" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation-Output/01.exyz.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgressBar.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/ProgressBar.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Simulation-Output/01.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Simulation-Output/01.exyz.gz" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Simulation-Output/01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation-Output/01.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Simulation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Simulation.h" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/Old_Tests.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/Old_Tests.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/Simulation.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/Utilities.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/Utilities.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/Simulation.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/Simulation.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/MD_Simulations" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/MD_Simulations" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gnu-plots/pressure_time.gnuplot" beforeDir="false" afterPath="$PROJECT_DIR$/gnu-plots/pressure_time.gnuplot" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -44,22 +36,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Simulation.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+            <state relative-caret-position="234">
+              <caret line="24" column="9" selection-start-line="24" selection-end-line="25" />
               <folding>
                 <element signature="e#168#190#0" expanded="true" />
-                <element signature="e#244#273#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -68,8 +50,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Simulation.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="433" selection-start-line="433" selection-end-line="433" />
+            <state relative-caret-position="132">
+              <caret line="271" column="24" selection-start-line="271" selection-start-column="24" selection-end-line="271" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -77,8 +59,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+            <state relative-caret-position="72">
+              <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -103,6 +85,7 @@
       <find>std::cout</find>
       <find>compress</find>
       <find>i *</find>
+      <find>pragma</find>
     </findStrings>
     <replaceStrings>
       <replace>file</replace>
@@ -122,24 +105,24 @@
         <option value="$PROJECT_DIR$/Simulation_Class.cpp" />
         <option value="$PROJECT_DIR$/Simulation_Class.h" />
         <option value="$PROJECT_DIR$/Old_Tests.cpp" />
-        <option value="$PROJECT_DIR$/ProgressBar.hpp" />
         <option value="$PROJECT_DIR$/GSD_Output.py" />
         <option value="$PROJECT_DIR$/Utilities.h" />
         <option value="$PROJECT_DIR$/Utilities.cpp" />
         <option value="$PROJECT_DIR$/cmakelists.txt" />
         <option value="$PROJECT_DIR$/gnu-plots/energy_time.gnuplot" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/gnu-plots/pressure_time.gnuplot" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/Simulation.cpp" />
         <option value="$PROJECT_DIR$/Simulation.h" />
+        <option value="$PROJECT_DIR$/gnu-plots/pressure_time.gnuplot" />
+        <option value="$PROJECT_DIR$/ProgressBar.hpp" />
+        <option value="$PROJECT_DIR$/Simulation.cpp" />
         <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
-    <option name="width" value="1440" />
+    <option name="width" value="720" />
     <option name="height" value="833" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -156,6 +139,16 @@
             <path>
               <item name="MD_Simulations" type="b2602c69:ProjectViewProjectNode" />
               <item name="MD-Simulations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MD_Simulations" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MD-Simulations" type="462c0819:PsiDirectoryNode" />
+              <item name="gnu-plots" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MD_Simulations" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MD-Simulations" type="462c0819:PsiDirectoryNode" />
+              <item name="Simulation-Output" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -222,7 +215,7 @@
       <workItem from="1546534559915" duration="6550000" />
       <workItem from="1546574339128" duration="603000" />
       <workItem from="1546713184027" duration="2825000" />
-      <workItem from="1546716597040" duration="2008000" />
+      <workItem from="1546716597040" duration="5899000" />
     </task>
     <task id="LOCAL-00001" summary="Small change to style of main.cpp file">
       <created>1546064401740</created>
@@ -315,11 +308,18 @@
       <option name="project" value="LOCAL" />
       <updated>1546503326125</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added openMP parrallelization, as well as changed compiler in cmake txt file">
+      <created>1546718986628</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1546718986628</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79751000" />
+    <option name="totallyTimeSpent" value="83642000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -437,7 +437,9 @@
     <MESSAGE value="added file" />
     <MESSAGE value="About to start force calculations" />
     <MESSAGE value="Updates lots of software. KE is diverging, something wrong" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updates lots of software. KE is diverging, something wrong" />
+    <MESSAGE value="Added openMP parrallelization, as well as changed compiler in cmake txt file" />
+    <MESSAGE value="Checked class against previous Python implementation. Numbers are similiar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Checked class against previous Python implementation. Numbers are similiar" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -469,13 +471,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProgressBar.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test_folder/test_file.xyz" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/Makefile">
@@ -535,18 +530,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gnu-plots/pressure_time.gnuplot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_folder/test_file.csv" />
     <entry file="file://$PROJECT_DIR$/Simulation-Output/01_energy_time.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Simulation-Output/01_pressure_time.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
@@ -556,28 +541,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Simulation-Output/01_pressure_time.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gnu-plots/pressure_time.gnuplot">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Simulation.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+        <state relative-caret-position="234">
+          <caret line="24" column="9" selection-start-line="24" selection-end-line="25" />
           <folding>
             <element signature="e#168#190#0" expanded="true" />
-            <element signature="e#244#273#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProgressBar.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Simulation-Output/01.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="280">
+          <caret line="4999" column="6" selection-start-line="4999" selection-start-column="6" selection-end-line="4999" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Simulation.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="433" selection-start-line="433" selection-end-line="433" />
+        <state relative-caret-position="132">
+          <caret line="271" column="24" selection-start-line="271" selection-start-column="24" selection-end-line="271" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+        <state relative-caret-position="72">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
         </state>
       </provider>
     </entry>

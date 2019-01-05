@@ -1,6 +1,6 @@
 //
 // Created by Prakhar Srivastav (https://github.com/prakhar1989/progress-cpp)
-//
+// Output slightly modified to include more brackets and iterations / second by Alec Glisman on 1-5-12
 
 #ifndef PROGRESSBAR_PROGRESSBAR_HPP
 #define PROGRESSBAR_PROGRESSBAR_HPP
@@ -29,7 +29,7 @@ public:
     void display() const
     {
         float progress = (float) ticks / total_ticks;
-        int pos = (int) (bar_width * progress);
+        auto pos = (int) (bar_width * progress);
 
         std::chrono::steady_clock::time_point now = std::chrono::steady_clock::now();
         auto time_elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(now-start_time).count();
@@ -41,8 +41,11 @@ public:
             else if (i == pos) std::cout << ">";
             else std::cout << incomplete_char;
         }
-        std::cout << "] " << int(progress * 100.0) << "% "
-                  << float(time_elapsed) / 1000.0 << "s\r";
+        std::cout << "] " << int(progress * 100.0) << "% ["
+                  << std::setprecision(2) << std::fixed << float(time_elapsed) / 1000.0 << "s, "
+                  << std::setprecision(0) << std::fixed << float(ticks) / (float(time_elapsed) / 1000.0)
+                  << "it/s"
+                  << "]\r";
         std::cout.flush();
     }
 
