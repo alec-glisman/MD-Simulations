@@ -2,14 +2,14 @@
 
 int main() {
     // Simulation variables
-    long num_iter = 500;
+    long num_iter = 10000;
     int num_simulations = 1;
-    unsigned long n_particle = 256;
-    double temp = 10.0;
-    double box = 40.0;
-    double epsilon = 1.0;  // Depth of the potential well
+    unsigned long n_particle = 100;
+    double temp = 4.0;
+    double box = 20.0;
+    double epsilon = 2.5;  // Depth of the potential well
     double sigma = 3.0;  // (Max) Length over which interactions can occur
-    double dt = 0.005;
+    double dt = 0.0005;
     std::string filename = "01";
     std::string foldername = "Simulation-Output";
     int n_dump = 5; // Dump XYZ frame every 5 iterations

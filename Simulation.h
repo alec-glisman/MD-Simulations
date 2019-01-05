@@ -21,6 +21,8 @@
 #include <boost/range/algorithm_ext/push_back.hpp> // push_back
 #include <random>  // Normal distribution for velocity init
 #include <chrono>  // Timing program execution
+#include <omp.h> // Parralellization
+#include <cstdlib> //in C++, For system output
 // #include "python/Python.h"  // To use GSD Output function
 
 
@@ -142,10 +144,17 @@ private: // Function to save variables
 private: // Plot values
     void plots();
 
+private: // Helper in calculating diffusion coefficients
+    void velocityAutocorrelation();
+
+private: // Helper in calculating diffusion coefficients
+    void radiiAutocorrelation();
+
+private: // Calculate diffusion coefficients
+    void diffusionCoeffs();
+
 public: // Run entire program
     void main();
-
-
 };
 
 

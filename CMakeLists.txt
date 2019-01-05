@@ -3,6 +3,11 @@ project(MD_Simulations)
 
 set(CMAKE_CXX_STANDARD 17)
 
+set(CMAKE_CXX_COMPILER /usr/local/bin/g++-8)
+set(CMAKE_C_COMPILER /usr/local/bin/gcc-8)
+# enable openmp using -fopenmp
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -fopenmp")
+
 set(Boost_USE_STATIC_LIBS ON) # only find static libs
 set(Boost_USE_MULTITHREADED ON)
 set(Boost_USE_STATIC_RUNTIME OFF)

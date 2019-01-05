@@ -12,10 +12,6 @@ chrono
 iostream
 -
 
-/Users/alecglisman/CLionProjects/MD-Simulations/Simulation.cpp
-Simulation.h
-/Users/alecglisman/CLionProjects/MD-Simulations/Simulation.h
-
 /Users/alecglisman/CLionProjects/MD-Simulations/Simulation.h
 Utilities.h
 /Users/alecglisman/CLionProjects/MD-Simulations/Utilities.h
@@ -40,6 +36,10 @@ boost/range/algorithm_ext/push_back.hpp
 random
 -
 chrono
+-
+omp.h
+-
+cstdlib
 -
 
 /Users/alecglisman/CLionProjects/MD-Simulations/Utilities.h

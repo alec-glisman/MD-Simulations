@@ -269,8 +269,13 @@ void Simulation::forceAndEnergetics() {
     double current_W{0};
     doubleMatrix_t current_forces{m_n_particle, doubleVector_t(m_n_dimensions)};
     // Loop through all pairwise interactions where atom j > i
+#pragma omp parallel for collapse(1) // Make new team of threads for parallel for-loop
     for (unsigned long i = 0; i < m_n_particle; i++) {
         for (unsigned long j = (i + 1); j < m_n_particle; j++) {
+            /*// Avoid double counting of forces
+            if (j < i) {
+                continue;
+            }*/
             // Differential Distances
             double dx = radii.at(i).at(0) - radii.at(j).at(0);
             double dy = radii.at(i).at(1) - radii.at(j).at(1);
@@ -316,6 +321,7 @@ void Simulation::forceAndEnergetics() {
 void Simulation::kineticEnergy() {
     double current_KE{0};
     // Loop through all particles in system
+#pragma omp parallel for collapse(1) // Make new team of threads for parallel for-loop
     for (unsigned int i = 0; i < m_n_particle; i++) {
         current_KE += (velocities.at(i).at(0) * velocities.at(i).at(0))
                       + (velocities.at(i).at(1) * velocities.at(i).at(1))
@@ -344,6 +350,7 @@ void Simulation::simulationTemperature() {
 
 void Simulation::velocityVerlet() {
     // First half-timestep of algorithm
+#pragma omp parallel for collapse(2) // Make new team of threads for parallel for-loop
     for (unsigned int i = 0; i < m_n_particle; i++) {
         for (unsigned int j = 0; j < m_n_dimensions; j++) {
             velocities.at(i).at(j) += 0.5 * m_dt * forces.at(i).at(j);
@@ -356,6 +363,7 @@ void Simulation::velocityVerlet() {
     }
     // Second half-timestep
     forceAndEnergetics();  // Update forces
+#pragma omp parallel for collapse(2) // Make new team of threads for parallel for-loop
     for (unsigned int i = 0; i < m_n_particle; i++) {
         for (unsigned int j = 0; j < m_n_dimensions; j++) {
             velocities.at(i).at(j) += 0.5 * m_dt * forces.at(i).at(j);
