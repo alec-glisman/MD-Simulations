@@ -75,11 +75,11 @@ void Simulation::fcc_lattice_init() {
     intVector_t range = rangeVect(0, cells);
     // Cartesian Product (Integers)
     intMatrix_t cartProd = cartesianProduct3(range);
-
     // Iterate through each row of Cartesian Product until n_particles reached
     unsigned int row = 0;
     for (unsigned int i = 0; i < (m_n_particle - 1); i++) {
         // 4 Atoms in a unit cell
+        // Divide by 2 to get atoms to all start in a subset of the box in X-axis
         for (auto a : rangeVect(0, 4)) {
             radius_.at(row).at(0) = (r_fcc.at(static_cast<unsigned int>(a)).at(0) + cartProd.at(i).at(0))
                     * cell_size / m_box;
@@ -125,7 +125,6 @@ intVector_t Simulation::rangeVect(int start, int stop) {
     // Get range variable to iterate through
     intVector_t range;
     boost::push_back(range, boost::irange(start, stop));
-    //toPrint(range, "Cell Range:");
     return range;
 }
 
@@ -218,18 +217,18 @@ void Simulation::create_frame() {
         file << "Time=" + timeString;
         file << "\n";
         // Atom Information (3-Position, 3-Velocity, 1-Radius)
-        for (int i = 0; i < m_n_particle; i++) {
-            file << std::fixed << std::setprecision(4) << radii[i][0];
+        for (unsigned int i = 0; i < m_n_particle; i++) {
+            file << std::fixed << std::setprecision(4) << radii.at(i).at(0);
             file << delimiter;
-            file << std::fixed << std::setprecision(4) << radii[i][1];
+            file << std::fixed << std::setprecision(4) << radii.at(i).at(1);
             file << delimiter;
-            file << std::fixed << std::setprecision(4) << radii[i][2];
+            file << std::fixed << std::setprecision(4) << radii.at(i).at(2);
             file << delimiter;
-            file << std::fixed << std::setprecision(4) << velocities[i][0];
+            file << std::fixed << std::setprecision(4) << velocities.at(i).at(0);
             file << delimiter;
-            file << std::fixed << std::setprecision(4) << velocities[i][1];
+            file << std::fixed << std::setprecision(4) << velocities.at(i).at(1);
             file << delimiter;
-            file << std::fixed << std::setprecision(4) << velocities[i][2];
+            file << std::fixed << std::setprecision(4) << velocities.at(i).at(2);
             file << delimiter;
             file << m_atom;
             file << "\n";
@@ -264,22 +263,37 @@ void Simulation::log_data() {
 }
 
 void Simulation::forceAndEnergetics() {
-    // Values to append to vectors at end of function
+    // Variables for for-loop
+    unsigned long n = m_n_particle; // Number of bodies
+    unsigned long r = n * (n - 1) / 2; // Number of interactions to count
+    // New time-step variables
     double current_U{0};
     double current_W{0};
-    doubleMatrix_t current_forces{m_n_particle, doubleVector_t(m_n_dimensions)};
-    // Loop through all pairwise interactions where atom j > i
-#pragma omp parallel for // Make new team of threads for parallel for-loop
-    for (unsigned long i = 0; i < m_n_particle; i++) {
-        for (unsigned long j = (i + 1); j < m_n_particle; j++) {
-            /*// Avoid double counting of forces
-            if (j < i) {
-                continue;
-            }*/
+    doubleMatrix_t current_forces{n, doubleVector_t(n)};
+
+#pragma omp parallel
+    {
+        // Values to append to vectors at end of function
+        double local_U{0};
+        double local_W{0};
+        doubleMatrix_t local_forces{n, doubleVector_t(n)};
+        doubleMatrix_t local_radii{radii};
+
+        // Collapsed lower-triangle matrix double for-loop: Loop through all pairwise interactions where atom j > i
+        #pragma omp for schedule(static)
+        for (unsigned k = 0; k < r; k++) {
+            // i and j convention.
+            // Source: https://stackoverflow.com/questions/33810187/openmp-and-c-private-variables/33836073#33836073
+            unsigned long i = k / n;
+            unsigned long j = k % n;
+            if (j <= i) {
+                i = n - i - 2;
+                j = n - j - 1;
+            }
             // Differential Distances
-            double dx = radii.at(i).at(0) - radii.at(j).at(0);
-            double dy = radii.at(i).at(1) - radii.at(j).at(1);
-            double dz = radii.at(i).at(2) - radii.at(j).at(2);
+            double dx = local_radii.at(i).at(0) - local_radii.at(j).at(0);
+            double dy = local_radii.at(i).at(1) - local_radii.at(j).at(1);
+            double dz = local_radii.at(i).at(2) - local_radii.at(j).at(2);
             // Find smallest 'mirror' image using periodic boundary conditions
             dx = (dx - std::rint(dx)) * m_box;
             dy = (dy - std::rint(dy)) * m_box;
@@ -299,18 +313,31 @@ void Simulation::forceAndEnergetics() {
             double fzi = fpr * dz;
             // Increment forces with current calculation, use anti-symmetry of force
             // f_ij = - f_ji
-            current_forces.at(i).at(0) += fxi;
-            current_forces.at(j).at(0) -= fxi;
-            current_forces.at(i).at(1) += fyi;
-            current_forces.at(j).at(1) -= fyi;
-            current_forces.at(i).at(2) += fzi;
-            current_forces.at(j).at(2) -= fzi;
+            local_forces.at(i).at(0) += fxi;
+            local_forces.at(j).at(0) -= fxi;
+            local_forces.at(i).at(1) += fyi;
+            local_forces.at(j).at(1) -= fyi;
+            local_forces.at(i).at(2) += fzi;
+            local_forces.at(j).at(2) -= fzi;
             // Increment potential by interaction energy
-            current_U += (4.0 * m_epsilon) * fr6 * (fr6 - 1);
+            local_U += (4.0 * m_epsilon) * fr6 * (fr6 - 1);
             // Increment W by interaction energy as well
-            current_W += -((dx * fxi) + (dy * fyi) + (dz * fzi));
+            local_W += -((dx * fxi) + (dy * fyi) + (dz * fzi));
+        } // End of lower-triangular for-loop
+
+        // Sum local variables after iterations complete
+        #pragma omp critical
+        {
+            for (unsigned long i = 0; i < m_n_particle; i++) {
+                current_forces.at(i).at(0) = local_forces.at(i).at(0);
+                current_forces.at(i).at(1) = local_forces.at(i).at(1);
+                current_forces.at(i).at(2) = local_forces.at(i).at(2);
+            }
+            current_U = local_U;
+            current_W = local_W;
         }
-    }
+    } // End of pragma omp parallel
+
     // Update class variables for current iteration
     E_potential.push_back(current_U);
     W.push_back(current_W);

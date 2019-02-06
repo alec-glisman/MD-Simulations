@@ -2,16 +2,16 @@ Simulation: 01
 
 Input Parameters:
 dt 0.005
-Total time 5
-Number of particles 500
-Number of steps 1000
-Box size 5
-Volume 8000
-Density 0.0625
-Initial temperature 5
-Epsilon 1
+Total time 30
+Number of particles 100
+Number of steps 6000
+Box size 1
+Volume 3375
+Density 0.02963
+Initial temperature 1
+Epsilon 3
 Sigma 1
-Time taken by main: 0 minutes, 23 seconds 
-	43 iterations/second 
+Time taken by main: 0 minutes, 8 seconds 
+	750 iterations/second 
 
 

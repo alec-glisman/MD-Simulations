@@ -21,7 +21,7 @@
 #include <boost/range/algorithm_ext/push_back.hpp> // push_back
 #include <random>  // Normal distribution for velocity init
 #include <chrono>  // Timing program execution
-#include <omp.h> // Parralellization
+#include <omp.h> // Parrallelization
 #include <cstdlib> //in C++, For system output
 // #include "python/Python.h"  // To use GSD Output function
 

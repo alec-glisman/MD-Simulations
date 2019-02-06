@@ -41,10 +41,15 @@ public:
             else if (i == pos) std::cout << ">";
             else std::cout << incomplete_char;
         }
+        double timeElapsed = float(time_elapsed) / 1000.0;
+        double iterationPerSecond = float(ticks) / (float(time_elapsed) / 1000.0);
+        double minleft = float(total_ticks - ticks) / iterationPerSecond / 60.0;
+        double secleft = static_cast<int>(minleft * 60) % 60;
         std::cout << "] " << int(progress * 100.0) << "% ["
-                  << std::setprecision(2) << std::fixed << float(time_elapsed) / 1000.0 << "s, "
-                  << std::setprecision(0) << std::fixed << float(ticks) / (float(time_elapsed) / 1000.0)
-                  << "it/s"
+                  << std::setprecision(2) << std::fixed << timeElapsed << "s<"
+                  << int(minleft) << "min "
+                  << std::setprecision(0) << std::fixed << secleft << "s, "
+                  << std::setprecision(0) << std::fixed << iterationPerSecond << "it/s"
                   << "]\r";
         std::cout.flush();
     }
