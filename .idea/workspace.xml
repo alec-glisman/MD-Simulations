@@ -40,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Simulation.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="107" column="16" selection-start-line="107" selection-start-column="16" selection-end-line="107" selection-end-column="16" />
+            <state relative-caret-position="133">
+              <caret line="337" column="19" selection-start-line="337" selection-start-column="16" selection-end-line="337" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -58,7 +58,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ProgressBar.hpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="659">
@@ -89,6 +89,7 @@
       <find>i *</find>
       <find>print</find>
       <find>pragma</find>
+      <find>pra</find>
     </findStrings>
     <replaceStrings>
       <replace>file</replace>
@@ -223,7 +224,7 @@
       <workItem from="1548259671361" duration="13000" />
       <workItem from="1548259703988" duration="568000" />
       <workItem from="1549401639216" duration="5000" />
-      <workItem from="1549401663607" duration="4135000" />
+      <workItem from="1549401663607" duration="4788000" />
     </task>
     <task id="LOCAL-00001" summary="Small change to style of main.cpp file">
       <created>1546064401740</created>
@@ -334,7 +335,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94339000" />
+    <option name="totallyTimeSpent" value="94992000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -355,13 +356,13 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32928476" />
       <window_info anchor="bottom" id="Messages" order="2" sideWeight="0.49852508" weight="0.3328841" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49785408" weight="0.35983828" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.49785408" visible="true" weight="0.35983828" />
       <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49852508" weight="0.39757413" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32793522" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.34231806" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.34231806" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50214595" side_tool="true" weight="0.32793522" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32479784" />
       <window_info anchor="bottom" id="CMake" order="12" weight="0.32928476" />
@@ -577,13 +578,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ProgressBar.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="659">
-          <caret line="48" column="40" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/bits/stl_vector.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -608,6 +602,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Simulation-Output/01.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="42" lean-forward="true" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -617,8 +618,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Simulation.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="107" column="16" selection-start-line="107" selection-start-column="16" selection-end-line="107" selection-end-column="16" />
+        <state relative-caret-position="133">
+          <caret line="337" column="19" selection-start-line="337" selection-start-column="16" selection-end-line="337" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProgressBar.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="659">
+          <caret line="48" column="40" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
         </state>
       </provider>
     </entry>

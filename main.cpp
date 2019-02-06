@@ -2,9 +2,9 @@
 
 int main() {
     // Simulation variables
-    long num_iter = 30000;
+    long num_iter = 1500;
     int num_simulations = 1;
-    unsigned long n_particle = 100;
+    unsigned long n_particle = 1000;
     double temp = 1.0;
     double box = 15.0;
     double epsilon = 3.0;  // Depth of the potential well
