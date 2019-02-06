@@ -52,7 +52,6 @@ Simulation::Simulation(long num_iter, int num_simulations,
     velocity_init();
     // Output Log Data
     log_data();
-
 }
 
 
@@ -329,12 +328,12 @@ void Simulation::forceAndEnergetics() {
         #pragma omp critical
         {
             for (unsigned long i = 0; i < m_n_particle; i++) {
-                current_forces.at(i).at(0) = local_forces.at(i).at(0);
-                current_forces.at(i).at(1) = local_forces.at(i).at(1);
-                current_forces.at(i).at(2) = local_forces.at(i).at(2);
+                current_forces.at(i).at(0) += local_forces.at(i).at(0);
+                current_forces.at(i).at(1) += local_forces.at(i).at(1);
+                current_forces.at(i).at(2) += local_forces.at(i).at(2);
             }
-            current_U = local_U;
-            current_W = local_W;
+            current_U += local_U;
+            current_W += local_W;
         }
     } // End of pragma omp parallel
 

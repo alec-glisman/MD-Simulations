@@ -12,21 +12,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56d34db4-5ae9-4e50-be71-64deecae5c5b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgressBar.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/ProgressBar.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Simulation-Output/01.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation-Output/01.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Simulation-Output/01.exyz.gz" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation-Output/01.exyz.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Simulation-Output/01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation-Output/01.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Simulation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Simulation.h" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/Simulation.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/Simulation.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/MD_Simulations" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/MD_Simulations" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -42,8 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Simulation.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="143" column="21" selection-start-line="143" selection-start-column="21" selection-end-line="143" selection-end-column="21" />
+            <state relative-caret-position="630">
+              <caret line="136" selection-start-line="136" selection-end-line="136" />
               <folding>
                 <element signature="e#168#190#0" expanded="true" />
               </folding>
@@ -54,8 +43,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Simulation.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="353" column="22" selection-start-line="353" selection-start-column="22" selection-end-line="353" selection-end-column="22" />
+            <state relative-caret-position="267">
+              <caret line="107" column="16" selection-start-line="107" selection-start-column="16" selection-end-line="107" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -63,8 +52,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+            <state relative-caret-position="72">
+              <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -129,8 +118,8 @@
         <option value="$PROJECT_DIR$/gnu-plots/pressure_time.gnuplot" />
         <option value="$PROJECT_DIR$/Simulation.h" />
         <option value="$PROJECT_DIR$/ProgressBar.hpp" />
-        <option value="$PROJECT_DIR$/Simulation.cpp" />
         <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/Simulation.cpp" />
       </list>
     </option>
   </component>
@@ -234,7 +223,7 @@
       <workItem from="1548259671361" duration="13000" />
       <workItem from="1548259703988" duration="568000" />
       <workItem from="1549401639216" duration="5000" />
-      <workItem from="1549401663607" duration="3615000" />
+      <workItem from="1549401663607" duration="4135000" />
     </task>
     <task id="LOCAL-00001" summary="Small change to style of main.cpp file">
       <created>1546064401740</created>
@@ -345,7 +334,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93819000" />
+    <option name="totallyTimeSpent" value="94339000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -366,15 +355,15 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32928476" />
       <window_info anchor="bottom" id="Messages" order="2" sideWeight="0.49852508" weight="0.3328841" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.49785408" visible="true" weight="0.35983828" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49785408" weight="0.35983828" />
       <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49852508" weight="0.39757413" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32793522" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.39811066" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.34231806" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50214595" side_tool="true" weight="0.32793522" />
-      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32523617" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32479784" />
       <window_info anchor="bottom" id="CMake" order="12" weight="0.32928476" />
       <window_info anchor="bottom" id="CPU Profiler" order="13" weight="0.54790825" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -588,16 +577,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Simulation.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="143" column="21" selection-start-line="143" selection-start-column="21" selection-end-line="143" selection-end-column="21" />
-          <folding>
-            <element signature="e#168#190#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ProgressBar.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="659">
@@ -619,17 +598,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Simulation.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="136" selection-start-line="136" selection-end-line="136" />
+          <folding>
+            <element signature="e#168#190#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        <state relative-caret-position="72">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Simulation.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="353" column="22" selection-start-line="353" selection-start-column="22" selection-end-line="353" selection-end-column="22" />
+        <state relative-caret-position="267">
+          <caret line="107" column="16" selection-start-line="107" selection-start-column="16" selection-end-line="107" selection-end-column="16" />
         </state>
       </provider>
     </entry>
