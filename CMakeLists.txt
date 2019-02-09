@@ -24,3 +24,11 @@ endif ()
 if (NOT Boost_FOUND)
     message(FATAL_ERROR "Could not find boost!")
 endif ()
+
+# Compiler Optimization
+set(CMAKE_CXX_FLAGS "-O3")
+
+
+# For profiling code
+#set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O0")
+#set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -O0")
