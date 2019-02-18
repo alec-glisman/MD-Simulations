@@ -11,37 +11,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56d34db4-5ae9-4e50-be71-64deecae5c5b" name="Default Changelist" comment="Added more compiler flags to CMakeLists.txt, as well as Python venv&#10;Converted .at() to []">
-      <change afterPath="$PROJECT_DIR$/Python/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MD-Simulations.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MD-Simulations.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/alecglisman.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/alecglisman.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="56d34db4-5ae9-4e50-be71-64deecae5c5b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GSD_Output.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/GSD_Output.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Old_Tests.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Simulation-Output/01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation-Output/01.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Simulation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/Old_Tests.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/Simulation.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/Simulation.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/Utilities.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/Utilities.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/MD_Simulations.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/MD_Simulations" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/MD_Simulations" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/MD_Simulations.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/MD_Simulations.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/MD_Simulations.dSYM/Contents/Resources/DWARF/MD_Simulations" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/MD_Simulations.dSYM/Contents/Resources/DWARF/MD_Simulations" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/OpenMP/cmake-build-debug/" />
@@ -54,11 +26,20 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Simulation.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
               <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="12" selection-start-column="12" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -103,6 +84,7 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -115,7 +97,6 @@
         <option value="$PROJECT_DIR$/Utilities.cpp" />
         <option value="$PROJECT_DIR$/cmakelists.txt" />
         <option value="$PROJECT_DIR$/gnu-plots/energy_time.gnuplot" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/gnu-plots/pressure_time.gnuplot" />
         <option value="$PROJECT_DIR$/ProgressBar.hpp" />
         <option value="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" />
@@ -125,6 +106,7 @@
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/Python/GSD_Output.py" />
         <option value="$PROJECT_DIR$/Simulation.cpp" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -147,6 +129,32 @@
             <path>
               <item name="MD_Simulations" type="b2602c69:ProjectViewProjectNode" />
               <item name="MD-Simulations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MD_Simulations" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MD-Simulations" type="462c0819:PsiDirectoryNode" />
+              <item name="venv" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MD_Simulations" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MD-Simulations" type="462c0819:PsiDirectoryNode" />
+              <item name="venv" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MD_Simulations" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MD-Simulations" type="462c0819:PsiDirectoryNode" />
+              <item name="venv" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="python3.7" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MD_Simulations" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MD-Simulations" type="462c0819:PsiDirectoryNode" />
+              <item name="venv" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="python3.7" type="462c0819:PsiDirectoryNode" />
+              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -236,7 +244,7 @@
       <workItem from="1549681124457" duration="374000" />
       <workItem from="1549703064388" duration="286000" />
       <workItem from="1550347500752" duration="2602000" />
-      <workItem from="1550528207930" duration="3114000" />
+      <workItem from="1550528207930" duration="3483000" />
     </task>
     <task id="LOCAL-00001" summary="Small change to style of main.cpp file">
       <created>1546064401740</created>
@@ -357,11 +365,18 @@
       <option name="project" value="LOCAL" />
       <updated>1549681503620</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added more compiler flags to CMakeLists.txt, as well as Python venv&#10;Converted .at() to []">
+      <created>1550531365627</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1550531365627</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105276000" />
+    <option name="totallyTimeSpent" value="105645000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -376,7 +391,7 @@
     <frame x="0" y="23" width="1440" height="831" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21173105" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21173105" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -386,7 +401,7 @@
       <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49852508" weight="0.39757413" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="TODO" order="7" visible="true" weight="0.32746956" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.32746956" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.9594046" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50214595" side_tool="true" weight="0.32793522" />
@@ -524,13 +539,6 @@
     <entry file="file://$PROJECT_DIR$/gnu-plots/pressure_time.png" />
     <entry file="file://$PROJECT_DIR$/gnu-plots/test_file_energy_time.png" />
     <entry file="file://$PROJECT_DIR$/test_folder/test_file_energy_time.png" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gnu-plots/energy_time.gnuplot">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -666,6 +674,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
         </state>
       </provider>
     </entry>
