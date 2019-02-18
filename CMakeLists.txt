@@ -13,11 +13,10 @@ set(Boost_USE_MULTITHREADED ON)
 set(Boost_USE_STATIC_RUNTIME OFF)
 
 find_package(Boost 1.68.0)
-# COMPONENTS date_time filesystem system range
 
 if (Boost_FOUND)
     include_directories(${Boost_INCLUDE_DIRS})
-    add_executable(MD_Simulations main.cpp Simulation.cpp Simulation.h Utilities.cpp Utilities.h Old_Tests.cpp ProgressBar.hpp)
+    add_executable(MD_Simulations main.cpp Simulation.cpp Simulation.h Utilities.cpp Utilities.h ProgressBar.hpp)
     target_link_libraries(MD_Simulations ${Boost_LIBRARIES})
 endif ()
 
@@ -26,7 +25,8 @@ if (NOT Boost_FOUND)
 endif ()
 
 # Compiler Optimization
-set(CMAKE_CXX_FLAGS "-O3")
+set(CMAKE_CXX_FLAGS "-O3 -mavx2")  # Better for my MacBook
+#set(CMAKE_CXX_FLAGS "-O3 -mavx2 -march=native")  # Better for distributed cluster computing
 
 
 # For profiling code

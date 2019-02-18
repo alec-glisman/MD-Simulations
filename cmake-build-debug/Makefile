@@ -123,33 +123,6 @@ MD_Simulations/fast:
 	$(MAKE) -f CMakeFiles/MD_Simulations.dir/build.make CMakeFiles/MD_Simulations.dir/build
 .PHONY : MD_Simulations/fast
 
-Old_Tests.o: Old_Tests.cpp.o
-
-.PHONY : Old_Tests.o
-
-# target to build an object file
-Old_Tests.cpp.o:
-	$(MAKE) -f CMakeFiles/MD_Simulations.dir/build.make CMakeFiles/MD_Simulations.dir/Old_Tests.cpp.o
-.PHONY : Old_Tests.cpp.o
-
-Old_Tests.i: Old_Tests.cpp.i
-
-.PHONY : Old_Tests.i
-
-# target to preprocess a source file
-Old_Tests.cpp.i:
-	$(MAKE) -f CMakeFiles/MD_Simulations.dir/build.make CMakeFiles/MD_Simulations.dir/Old_Tests.cpp.i
-.PHONY : Old_Tests.cpp.i
-
-Old_Tests.s: Old_Tests.cpp.s
-
-.PHONY : Old_Tests.s
-
-# target to generate assembly for a file
-Old_Tests.cpp.s:
-	$(MAKE) -f CMakeFiles/MD_Simulations.dir/build.make CMakeFiles/MD_Simulations.dir/Old_Tests.cpp.s
-.PHONY : Old_Tests.cpp.s
-
 Simulation.o: Simulation.cpp.o
 
 .PHONY : Simulation.o
@@ -240,9 +213,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... MD_Simulations"
-	@echo "... Old_Tests.o"
-	@echo "... Old_Tests.i"
-	@echo "... Old_Tests.s"
 	@echo "... Simulation.o"
 	@echo "... Simulation.i"
 	@echo "... Simulation.s"

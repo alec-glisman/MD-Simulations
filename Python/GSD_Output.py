@@ -1,4 +1,5 @@
 import sys
+
 import gsd.hoomd  # Export for Ovito
 import numpy as np
 
@@ -7,9 +8,9 @@ import numpy as np
 # Also stores radii and velocities in a compressed format which is nice
 
 
-def create_frame(radii, velocities, sigma, box, n_particle, frame):
+def create_frame(radii, velocities, sigma, box, n_particle, frame, filename):
     # Set up GSD Simulation
-    t = gsd.hoomd.open(name='GSD/Simulation_' + str(self.filename) + '.gsd', mode='wb')
+    t = gsd.hoomd.open(name='GSD/Simulation_' + str(filename) + '.gsd', mode='wb')
 
     # Particle positions, velocities, diameter
     radii = box * radii
@@ -39,12 +40,12 @@ def create_frame(radii, velocities, sigma, box, n_particle, frame):
 total = len(sys.argv)
 cmdargs = str(sys.argv)
 
-print ("The total numbers of args passed to the script: %d " % total)
-print ("Args list: %s " % cmdargs)
+print("The total numbers of args passed to the script: %d " % total)
+print("Args list: %s " % cmdargs)
 
 
 # Parsing args one by one
 # "Script name: %s" % str(sys.argv[0]))
 
-print ("First argument: %s" % str(sys.argv[1]))
-print ("Second argument: %s" % str(sys.argv[2]))
+print("First argument: %s" % str(sys.argv[1]))
+print("Second argument: %s" % str(sys.argv[2]))

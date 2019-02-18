@@ -2,18 +2,8 @@
 // Created by Alec Glisman on 2018-12-28.
 //
 
-// Internal Project Dependencies
+// Header file with definitions
 #include "Simulation.h"
-
-// External Dependencies
-
-
-// TYPE ALIASES
-using doubleMatrix_t =  std::vector<std::vector<double> >;
-using doubleVector_t =  std::vector<double>;
-using intMatrix_t =  std::vector<std::vector<int> >;
-using intVector_t =  std::vector<int>;
-using string_t = std::string;
 
 
 Simulation::Simulation() = default;
@@ -80,12 +70,12 @@ void Simulation::fcc_lattice_init() {
         // 4 Atoms in a unit cell
         // Divide by 2 to get atoms to all start in a subset of the box in X-axis
         for (auto a : rangeVect(0, 4)) {
-            radius_.at(row).at(0) = (r_fcc.at(static_cast<unsigned int>(a)).at(0) + cartProd.at(i).at(0))
-                    * cell_size / m_box;
-            radius_.at(row).at(1) = (r_fcc.at(static_cast<unsigned int>(a)).at(1) + cartProd.at(i).at(1))
-                    * cell_size / m_box;
-            radius_.at(row).at(2) = (r_fcc.at(static_cast<unsigned int>(a)).at(2) + cartProd.at(i).at(2))
-                    * cell_size / m_box;
+            radius_[row][0] = (r_fcc[static_cast<unsigned int>(a)][0] + cartProd[i][0])
+                              * cell_size / m_box;
+            radius_[row][1] = (r_fcc[static_cast<unsigned int>(a)][1] + cartProd[i][1])
+                              * cell_size / m_box;
+            radius_[row][2] = (r_fcc[static_cast<unsigned int>(a)][2] + cartProd[i][2])
+                              * cell_size / m_box;
             row++;
             if (row == m_n_particle) {
                 // Set Initial Radii positions
@@ -108,9 +98,9 @@ intMatrix_t Simulation::cartesianProduct3(intVector_t &vector) {
         for (int j = 0; j < vector.size(); j++) {
             for (int k = 0; k < vector.size(); k++) {
                 // Fill in values
-                cartProd.at(row).at(0) = i;
-                cartProd.at(row).at(1) = j;
-                cartProd.at(row).at(2) = k;
+                cartProd[row][0] = i;
+                cartProd[row][1] = j;
+                cartProd[row][2] = k;
                 // Increment to next row in matrix to fill
                 row++;
             }
@@ -140,9 +130,9 @@ void Simulation::velocity_init() {
     std::normal_distribution<double> distribution(mean, std_dev); // Set distribution to sample from
     // Loop over all of velocity matrix to give values
     for (unsigned long p = 0; p < m_n_particle; p++) {
-        vel_init_i.at(p) = distribution(generator);
-        vel_init_j.at(p) = distribution(generator);
-        vel_init_k.at(p) = distribution(generator);
+        vel_init_i[p] = distribution(generator);
+        vel_init_j[p] = distribution(generator);
+        vel_init_k[p] = distribution(generator);
     }
 
     // Calculate the mean of each column vector (i, j, k)
@@ -151,24 +141,24 @@ void Simulation::velocity_init() {
     double mean_k = std::accumulate(vel_init_k.begin(), vel_init_k.end(), 0.0) / m_n_particle;
     // Subtract the mean from all entries to ensure average linear momentum = 0
     for (unsigned long p = 0; p < m_n_particle; p++) {
-        vel_init_i.at(p) -= mean_i;
-        vel_init_j.at(p) -= mean_j;
-        vel_init_k.at(p) -= mean_k;
+        vel_init_i[p] -= mean_i;
+        vel_init_j[p] -= mean_j;
+        vel_init_k[p] -= mean_k;
     }
     // Ensure total sum = 0 once more by making row 0 the opposite sum of row 1 -> n
-    double tot_i = std::accumulate(vel_init_i.begin(), vel_init_i.end(), -vel_init_i.at(0));
-    double tot_j = std::accumulate(vel_init_j.begin(), vel_init_j.end(), -vel_init_j.at(0));
-    double tot_k = std::accumulate(vel_init_k.begin(), vel_init_k.end(), -vel_init_k.at(0));
-    vel_init_i.at(0) = -tot_i;
-    vel_init_j.at(0) = -tot_j;
-    vel_init_k.at(0) = -tot_k;
+    double tot_i = std::accumulate(vel_init_i.begin(), vel_init_i.end(), -vel_init_i[0]);
+    double tot_j = std::accumulate(vel_init_j.begin(), vel_init_j.end(), -vel_init_j[0]);
+    double tot_k = std::accumulate(vel_init_k.begin(), vel_init_k.end(), -vel_init_k[0]);
+    vel_init_i[0] = -tot_i;
+    vel_init_j[0] = -tot_j;
+    vel_init_k[0] = -tot_k;
 
     // Make sure initialized velocities equal system Temp
     double v2_total{0.0};
     for (unsigned long p = 0; p < m_n_particle; p++) {
-        v2_total += (vel_init_i.at(p) * vel_init_i.at(p))
-                    + (vel_init_j.at(p) * vel_init_j.at(p))
-                    + (vel_init_k.at(p) * vel_init_k.at(p));
+        v2_total += (vel_init_i[p] * vel_init_i[p])
+                    + (vel_init_j[p] * vel_init_j[p])
+                    + (vel_init_k[p] * vel_init_k[p]);
     }
     v2_total = 0.5 * v2_total;  // Scale by 1/2 to get Kinetic Energy
     double kineticThermometer = m_temp * m_DoF * 0.5;
@@ -177,13 +167,13 @@ void Simulation::velocity_init() {
     // Scale velocities by the thermometer KE
     for (unsigned long p = 0; p < m_n_particle; p++) {
         // Scale the Values
-        vel_init_i.at(p) *= vel_KE_factor;
-        vel_init_j.at(p) *= vel_KE_factor;
-        vel_init_k.at(p) *= vel_KE_factor;
+        vel_init_i[p] *= vel_KE_factor;
+        vel_init_j[p] *= vel_KE_factor;
+        vel_init_k[p] *= vel_KE_factor;
         // Enter values in the velocity array
-        velocities.at(p).at(0) = vel_init_i.at(p);
-        velocities.at(p).at(1) = vel_init_j.at(p);
-        velocities.at(p).at(2) = vel_init_k.at(p);
+        velocities[p][0] = vel_init_i[p];
+        velocities[p][1] = vel_init_j[p];
+        velocities[p][2] = vel_init_k[p];
     }
 }
 
@@ -217,17 +207,17 @@ void Simulation::create_frame() {
         file << "\n";
         // Atom Information (3-Position, 3-Velocity, 1-Radius)
         for (unsigned int i = 0; i < m_n_particle; i++) {
-            file << std::fixed << std::setprecision(4) << radii.at(i).at(0);
+            file << std::fixed << std::setprecision(4) << radii[i][0];
             file << delimiter;
-            file << std::fixed << std::setprecision(4) << radii.at(i).at(1);
+            file << std::fixed << std::setprecision(4) << radii[i][1];
             file << delimiter;
-            file << std::fixed << std::setprecision(4) << radii.at(i).at(2);
+            file << std::fixed << std::setprecision(4) << radii[i][2];
             file << delimiter;
-            file << std::fixed << std::setprecision(4) << velocities.at(i).at(0);
+            file << std::fixed << std::setprecision(4) << velocities[i][0];
             file << delimiter;
-            file << std::fixed << std::setprecision(4) << velocities.at(i).at(1);
+            file << std::fixed << std::setprecision(4) << velocities[i][1];
             file << delimiter;
-            file << std::fixed << std::setprecision(4) << velocities.at(i).at(2);
+            file << std::fixed << std::setprecision(4) << velocities[i][2];
             file << delimiter;
             file << m_atom;
             file << "\n";
@@ -290,9 +280,9 @@ void Simulation::forceAndEnergetics() {
                 j = n - j - 1;
             }
             // Differential Distances
-            double dx = local_radii.at(i).at(0) - local_radii.at(j).at(0);
-            double dy = local_radii.at(i).at(1) - local_radii.at(j).at(1);
-            double dz = local_radii.at(i).at(2) - local_radii.at(j).at(2);
+            double dx = local_radii[i][0] - local_radii[j][0];
+            double dy = local_radii[i][1] - local_radii[j][1];
+            double dz = local_radii[i][2] - local_radii[j][2];
             // Find smallest 'mirror' image using periodic boundary conditions
             dx = (dx - std::rint(dx)) * m_box;
             dy = (dy - std::rint(dy)) * m_box;
@@ -312,12 +302,12 @@ void Simulation::forceAndEnergetics() {
             double fzi = fpr * dz;
             // Increment forces with current calculation, use anti-symmetry of force
             // f_ij = - f_ji
-            local_forces.at(i).at(0) += fxi;
-            local_forces.at(j).at(0) -= fxi;
-            local_forces.at(i).at(1) += fyi;
-            local_forces.at(j).at(1) -= fyi;
-            local_forces.at(i).at(2) += fzi;
-            local_forces.at(j).at(2) -= fzi;
+            local_forces[i][0] += fxi;
+            local_forces[j][0] -= fxi;
+            local_forces[i][1] += fyi;
+            local_forces[j][1] -= fyi;
+            local_forces[i][2] += fzi;
+            local_forces[j][2] -= fzi;
             // Increment potential by interaction energy
             local_U += (4.0 * m_epsilon) * fr6 * (fr6 - 1);
             // Increment W by interaction energy as well
@@ -328,9 +318,9 @@ void Simulation::forceAndEnergetics() {
         #pragma omp critical
         {
             for (unsigned long i = 0; i < m_n_particle; i++) {
-                current_forces.at(i).at(0) += local_forces.at(i).at(0);
-                current_forces.at(i).at(1) += local_forces.at(i).at(1);
-                current_forces.at(i).at(2) += local_forces.at(i).at(2);
+                current_forces[i][0] += local_forces[i][0];
+                current_forces[i][1] += local_forces[i][1];
+                current_forces[i][2] += local_forces[i][2];
             }
             current_U += local_U;
             current_W += local_W;
@@ -348,9 +338,9 @@ void Simulation::kineticEnergy() {
     double current_KE{0};
     // Loop through all particles in system
     for (unsigned int i = 0; i < m_n_particle; i++) {
-        current_KE += (velocities.at(i).at(0) * velocities.at(i).at(0))
-                      + (velocities.at(i).at(1) * velocities.at(i).at(1))
-                      + (velocities.at(i).at(2) * velocities.at(i).at(2));
+        current_KE += (velocities[i][0] * velocities[i][0])
+                      + (velocities[i][1] * velocities[i][1])
+                      + (velocities[i][2] * velocities[i][2]);
     }
     // Divide by 2 to get 'proper' KE
     current_KE = current_KE / 2.0;
@@ -377,19 +367,19 @@ void Simulation::velocityVerlet() {
     // First half-timestep of algorithm
     for (unsigned int i = 0; i < m_n_particle; i++) {
         for (unsigned int j = 0; j < m_n_dimensions; j++) {
-            velocities.at(i).at(j) += 0.5 * m_dt * forces.at(i).at(j);
-            radii.at(i).at(j) += m_dt * velocities.at(i).at(j) / m_box;
+            velocities[i][j] += 0.5 * m_dt * forces[i][j];
+            radii[i][j] += m_dt * velocities[i][j] / m_box;
             // Calculate 'unwrapped' radii
-            unwrapped_radii.at(i).at(j) += m_dt * velocities.at(i).at(j) / m_box;
+            unwrapped_radii[i][j] += m_dt * velocities[i][j] / m_box;
             // Applying Periodic Boundary Conditions to self.radii
-            radii.at(i).at(j) -= std::rint(radii.at(i).at(j));
+            radii[i][j] -= std::rint(radii[i][j]);
         }
     }
     // Second half-timestep
     forceAndEnergetics();  // Update forces
     for (unsigned int i = 0; i < m_n_particle; i++) {
         for (unsigned int j = 0; j < m_n_dimensions; j++) {
-            velocities.at(i).at(j) += 0.5 * m_dt * forces.at(i).at(j);
+            velocities[i][j] += 0.5 * m_dt * forces[i][j];
         }
     }
     // Update system energetics
@@ -445,11 +435,11 @@ void Simulation::saveVars() {
         // Loop through vectors to output information
         for (unsigned int i = 0; i < E_total.size(); i++) {
             file << i << delimiter;
-            file << std::setprecision(6) << std::fixed << E_total.at(i) << delimiter;
-            file << std::setprecision(6) << std::fixed << E_kinetic.at(i) << delimiter;
-            file << std::setprecision(6) << std::fixed << E_potential.at(i) << delimiter;
-            file << std::setprecision(6) << std::fixed << Temp_sim.at(i) << delimiter;
-            file << std::setprecision(6) << std::fixed << Pressure.at(i) << delimiter;
+            file << std::setprecision(6) << std::fixed << E_total[i] << delimiter;
+            file << std::setprecision(6) << std::fixed << E_kinetic[i] << delimiter;
+            file << std::setprecision(6) << std::fixed << E_potential[i] << delimiter;
+            file << std::setprecision(6) << std::fixed << Temp_sim[i] << delimiter;
+            file << std::setprecision(6) << std::fixed << Pressure[i] << delimiter;
             file << "\n";
         }
         file.close();

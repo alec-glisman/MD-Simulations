@@ -1,12 +1,14 @@
 <component name="ProjectDictionaryState">
   <dictionary name="alecglisman">
     <words>
+      <w>cmdargs</w>
       <w>exyz</w>
       <w>foldername</w>
       <w>fstream</w>
       <w>glisman</w>
       <w>gnuplot</w>
       <w>ovito</w>
+      <w>partpos</w>
       <w>timestep</w>
       <w>vect</w>
       <w>verlet</w>

@@ -2,7 +2,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/MD_Simulations.dir/main.cpp.o"
   "CMakeFiles/MD_Simulations.dir/Simulation.cpp.o"
   "CMakeFiles/MD_Simulations.dir/Utilities.cpp.o"
-  "CMakeFiles/MD_Simulations.dir/Old_Tests.cpp.o"
   "MD_Simulations.pdb"
   "MD_Simulations"
 )

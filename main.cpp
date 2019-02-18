@@ -2,7 +2,7 @@
 
 int main() {
     // Simulation variables
-    long num_iter = 15000;
+    long num_iter = 8000;
     int num_simulations = 1;
     unsigned long n_particle = 600;
     double temp = 5.0;
