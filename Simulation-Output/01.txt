@@ -11,7 +11,7 @@ Density 0.1778
 Initial temperature 5
 Epsilon 2
 Sigma 2
-Time taken by main: 1 minutes, 50 seconds 
-	72 iterations/second 
+Time taken by main: 1 minutes, 53 seconds 
+	70 iterations/second 
 
 

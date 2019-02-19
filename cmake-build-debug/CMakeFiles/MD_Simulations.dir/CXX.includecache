@@ -6,21 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/Users/alecglisman/CLionProjects/MD-Simulations/ProgressBar.hpp
+/Users/alecglisman/CLionProjects/MD_Simulations/ProgressBar.hpp
 chrono
 -
 iostream
 -
 
-/Users/alecglisman/CLionProjects/MD-Simulations/Simulation.cpp
+/Users/alecglisman/CLionProjects/MD_Simulations/Simulation.cpp
 Simulation.h
-/Users/alecglisman/CLionProjects/MD-Simulations/Simulation.h
+/Users/alecglisman/CLionProjects/MD_Simulations/Simulation.h
 
-/Users/alecglisman/CLionProjects/MD-Simulations/Simulation.h
+/Users/alecglisman/CLionProjects/MD_Simulations/Simulation.h
 Utilities.h
-/Users/alecglisman/CLionProjects/MD-Simulations/Utilities.h
+/Users/alecglisman/CLionProjects/MD_Simulations/Utilities.h
 ProgressBar.hpp
-/Users/alecglisman/CLionProjects/MD-Simulations/ProgressBar.hpp
+/Users/alecglisman/CLionProjects/MD_Simulations/ProgressBar.hpp
 cmath
 -
 iostream
@@ -46,7 +46,13 @@ omp.h
 cstdlib
 -
 
-/Users/alecglisman/CLionProjects/MD-Simulations/Utilities.h
+/Users/alecglisman/CLionProjects/MD_Simulations/Utilities.cpp
+Utilities.h
+/Users/alecglisman/CLionProjects/MD_Simulations/Utilities.h
+cmath
+-
+
+/Users/alecglisman/CLionProjects/MD_Simulations/Utilities.h
 iostream
 -
 vector
@@ -55,6 +61,10 @@ iomanip
 -
 fstream
 -
+
+/Users/alecglisman/CLionProjects/MD_Simulations/main.cpp
+Simulation.h
+/Users/alecglisman/CLionProjects/MD_Simulations/Simulation.h
 
 /usr/local/include/boost/assert.hpp
 boost/config.hpp

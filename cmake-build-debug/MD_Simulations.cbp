@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug"/>
+				<Option working_dir="/Users/alecglisman/CLionProjects/MD_Simulations/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD_Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD_Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD_Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD_Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug"/>
+				<Option working_dir="/Users/alecglisman/CLionProjects/MD_Simulations/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD_Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD_Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD_Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD_Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug"/>
+				<Option working_dir="/Users/alecglisman/CLionProjects/MD_Simulations/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD_Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD_Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD_Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD_Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="MD_Simulations">
-				<Option output="/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug/MD_Simulations" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug"/>
+				<Option output="/Users/alecglisman/CLionProjects/MD_Simulations/cmake-build-debug/MD_Simulations" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/alecglisman/CLionProjects/MD_Simulations/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -52,15 +52,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 MD_Simulations"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD_Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 MD_Simulations"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD_Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD_Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD_Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="MD_Simulations/fast">
-				<Option output="/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug/MD_Simulations" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug"/>
+				<Option output="/Users/alecglisman/CLionProjects/MD_Simulations/cmake-build-debug/MD_Simulations" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/alecglisman/CLionProjects/MD_Simulations/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -73,32 +73,32 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 MD_Simulations/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD-Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD_Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 MD_Simulations/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD_Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD_Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/alecglisman/CLionProjects/MD_Simulations/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/alecglisman/CLionProjects/MD-Simulations/ProgressBar.hpp">
+		<Unit filename="/Users/alecglisman/CLionProjects/MD_Simulations/ProgressBar.hpp">
 			<Option target="MD_Simulations"/>
 		</Unit>
-		<Unit filename="/Users/alecglisman/CLionProjects/MD-Simulations/Simulation.cpp">
+		<Unit filename="/Users/alecglisman/CLionProjects/MD_Simulations/Simulation.cpp">
 			<Option target="MD_Simulations"/>
 		</Unit>
-		<Unit filename="/Users/alecglisman/CLionProjects/MD-Simulations/Simulation.h">
+		<Unit filename="/Users/alecglisman/CLionProjects/MD_Simulations/Simulation.h">
 			<Option target="MD_Simulations"/>
 		</Unit>
-		<Unit filename="/Users/alecglisman/CLionProjects/MD-Simulations/Utilities.cpp">
+		<Unit filename="/Users/alecglisman/CLionProjects/MD_Simulations/Utilities.cpp">
 			<Option target="MD_Simulations"/>
 		</Unit>
-		<Unit filename="/Users/alecglisman/CLionProjects/MD-Simulations/Utilities.h">
+		<Unit filename="/Users/alecglisman/CLionProjects/MD_Simulations/Utilities.h">
 			<Option target="MD_Simulations"/>
 		</Unit>
-		<Unit filename="/Users/alecglisman/CLionProjects/MD-Simulations/main.cpp">
+		<Unit filename="/Users/alecglisman/CLionProjects/MD_Simulations/main.cpp">
 			<Option target="MD_Simulations"/>
 		</Unit>
-		<Unit filename="/Users/alecglisman/CLionProjects/MD-Simulations/CMakeLists.txt">
+		<Unit filename="/Users/alecglisman/CLionProjects/MD_Simulations/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
